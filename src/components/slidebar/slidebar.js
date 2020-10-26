@@ -10,8 +10,8 @@ class Slidebar extends Component {
                 
                 Tip 2: you can also add an image using data-image tag
                     */}
-                <div className="logo"><a href="http://www.creative-tim.com" className="simple-text logo-normal">
-                    Creative Tim
+                <div className="logo"><a href="#" className="simple-text logo-normal">
+                    Gadget Doctor
                     </a></div>
                 <div className="sidebar-wrapper">
                     <ul className="nav">
@@ -64,9 +64,9 @@ class Slidebar extends Component {
                             </a>
                         </li>
                         <li className="nav-item active-pro ">
-                            <a className="nav-link" href="./upgrade.html">
-                                <i className="material-icons">unarchive</i>
-                                <p>Upgrade to PRO</p>
+                            <a className="nav-link" href="./login.html">
+                                <i className="material-icons">assignment_return</i>
+                                <p>LogOut</p>
                             </a>
                         </li>
                     </ul>
