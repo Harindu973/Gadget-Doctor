@@ -13830,6 +13830,7 @@ fieldset[disabled] .form-group .form-control {
 .navbar .navbar-wrapper {
   display: inline-flex;
   align-items: center;
+  color: whitesmoke;
 }
 
 .navbar .navbar-brand {
@@ -15164,7 +15165,8 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
   left: 0;
   z-index: 2;
   width: 260px;
-  background: #fff;
+  background: black;
+  opacity: 0.7;
   box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.56), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
 }
 
@@ -15324,6 +15326,17 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
   white-space: nowrap;
 }
 
+.sidebar .nav p:hover {
+  margin: 0;
+  line-height: 30px;
+  font-size: 14px;
+  position: relative;
+  display: block;
+  height: auto;
+  white-space: nowrap;
+  color:white;
+}
+
 .sidebar .nav i {
   font-size: 24px;
   float: left;
@@ -15338,7 +15351,7 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
 .sidebar .nav li .dropdown-menu a {
   margin: 10px 15px 0;
   border-radius: 3px;
-  color: #3C4858;
+  color: #eee;
   padding-left: 10px;
   padding-right: 10px;
   text-transform: capitalize;
@@ -15400,7 +15413,7 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
   padding: 5px 0px;
   display: inline-block;
   font-size: 18px;
-  color: #3C4858;
+  color: #eee;
   white-space: nowrap;
   font-weight: 400;
   line-height: 30px;
@@ -16985,9 +16998,16 @@ thead.thead-inverse th,
 }
 
 body {
-  background-color: #eee;
+  /*background-color: teal;*/
+  background-image: url("../assets/img/carback.jpg");
   color: #3C4858;
   font-weight: 300;
+  background-position: center;
+  background-repeat: no-repeat; 
+  background-size: cover;
+  background-attachment: fixed;
+  
+  
 }
 
 legend {
@@ -17366,7 +17386,7 @@ html[dir="rtl"] .form-check .form-check-sign .check:before {
   margin-top: 30px;
   border-radius: 6px;
   color: #333333;
-  background: #fff;
+  background: #eee;
   width: 100%;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
 }

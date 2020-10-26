@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Row1 from "../dashboad/row1/row1";
 import Row2 from "../dashboad/row2/row2";
-//import "./newsletter.css";
+//import "";
 
 class Newsletter extends Component {
     render() {
