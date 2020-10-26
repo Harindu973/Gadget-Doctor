@@ -7,46 +7,47 @@ class Newsletter extends Component {
             <div className="row">
                 <div className="col-lg-3 col-md-6 col-sm-6">
                     <div className="card card-stats">
-                        <div className="card-header card-header-warning card-header-icon">
+                        <div className="card-header card-header-success card-header-icon">
                             <div className="card-icon">
-                                <i className="material-icons">content_copy</i>
+                                <i className="material-icons">drive_eta</i>
                             </div>
-                            <p className="card-category">Used Space</p>
-                            <h3 className="card-title">49/50
-                          <small>GB</small>
+                            <p className="card-category">Mileage</p>
+                            <h3 className="card-title">20000
+                            <small>KM</small></h3>
+                        </div>
+                        <div className="card-footer">
+                            <div className="stats">
+                                <i className="material-icons">date_range</i> Last Synced on: 2020 Oct 21
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="col-lg-3 col-md-6 col-sm-6">
+                    <div className="card card-stats">
+                        <div className="card-header card-header-info card-header-icon">
+                            <div className="card-icon">
+                                <i className="material-icons">handyman</i>
+                            </div>
+                            <p className="card-category">Next Service at</p>
+                            <h3 className="card-title">25000
+                          <small>KM</small>
                             </h3>
                         </div>
                         <div className="card-footer">
                             <div className="stats">
                                 <i className="material-icons text-danger">warning</i>
-                                <a href="javascript:;">Get More Space...</a>
+                                <a href="javascript:;">Or before : 2021 Jan 20</a>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div className="col-lg-3 col-md-6 col-sm-6">
                     <div className="card card-stats">
-                        <div className="card-header card-header-success card-header-icon">
-                            <div className="card-icon">
-                                <i className="material-icons">store</i>
-                            </div>
-                            <p className="card-category">Revenue</p>
-                            <h3 className="card-title">$34,245</h3>
-                        </div>
-                        <div className="card-footer">
-                            <div className="stats">
-                                <i className="material-icons">date_range</i> Last 24 Hours
-                        </div>
-                        </div>
-                    </div>
-                </div>
-                <div className="col-lg-3 col-md-6 col-sm-6">
-                    <div className="card card-stats">
-                        <div className="card-header card-header-danger card-header-icon">
+                        <div className="card-header card-header-warning card-header-icon">
                             <div className="card-icon">
                                 <i className="material-icons">info_outline</i>
                             </div>
-                            <p className="card-category">Fixed Issues</p>
+                            <p className="card-category">Warnings</p>
                             <h3 className="card-title">75</h3>
                         </div>
                         <div className="card-footer">
@@ -58,11 +59,11 @@ class Newsletter extends Component {
                 </div>
                 <div className="col-lg-3 col-md-6 col-sm-6">
                     <div className="card card-stats">
-                        <div className="card-header card-header-info card-header-icon">
+                        <div className="card-header card-header-danger card-header-icon">
                             <div className="card-icon">
-                                <i className="fa fa-twitter" />
+                            <i className="material-icons">report</i>
                             </div>
-                            <p className="card-category">Followers</p>
+                            <p className="card-category">Issues you Must Fix</p>
                             <h3 className="card-title">+245</h3>
                         </div>
                         <div className="card-footer">
