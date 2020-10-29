@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 //import "./newsletter.css";
 
+import {
+    Link
+} from 'react-router-dom';
+
 class Slidebar extends Component {
     render() {
         return (
@@ -15,12 +19,16 @@ class Slidebar extends Component {
                     </a></div>
                 <div className="sidebar-wrapper">
                     <ul className="nav">
-                        <li className="nav-item active  ">
-                            <a className="nav-link" href="./dashboard.html">
-                                <i className="material-icons">dashboard</i>
-                                <p>Dashboard</p>
-                            </a>
-                        </li>
+                        <Link to="/dashboad">
+                            <li className="nav-item active  ">
+
+                                <a className="nav-link" href="./dashboard.html">
+                                    <i className="material-icons">dashboard</i>
+                                    <p>Dashboard</p>
+                                </a>
+
+                            </li>
+                        </Link>
                         <li className="nav-item ">
                             <a className="nav-link" href="./user.html">
                                 <i className="material-icons">person</i>

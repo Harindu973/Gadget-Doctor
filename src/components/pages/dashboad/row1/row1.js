@@ -28,7 +28,7 @@ class Newsletter extends Component {
                             <div className="card-icon">
                                 <i className="material-icons">handyman</i>
                             </div>
-                            <p className="card-category">Next Service at</p>
+                            <p className="card-category">Next Service</p>
                             <h3 className="card-title">25000
                           <small>KM</small>
                             </h3>
@@ -63,7 +63,7 @@ class Newsletter extends Component {
                             <div className="card-icon">
                             <i className="material-icons">report</i>
                             </div>
-                            <p className="card-category">Issues you Must Fix</p>
+                            <p className="card-category">Issues</p>
                             <h3 className="card-title">+245</h3>
                         </div>
                         <div className="card-footer">
