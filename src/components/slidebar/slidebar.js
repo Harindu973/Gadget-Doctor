@@ -71,12 +71,14 @@ class Slidebar extends Component {
                                 <p>RTL Support</p>
                             </a>
                         </li>
-                        <li className="nav-item active-pro ">
-                            <a className="nav-link" href="./login.html">
+                        <Link to="/">
+                        <li className="nav-item active-pro ">   
+                            <a className="nav-link">
                                 <i className="material-icons">assignment_return</i>
                                 <p>LogOut</p>
                             </a>
                         </li>
+                        </Link>
                     </ul>
                 </div>
             </div>

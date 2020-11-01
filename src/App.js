@@ -3,10 +3,13 @@ import logo from './logo.svg';
 import './App.css';
 import './css/material-dashboard.css';
 
-import Slidebar from "./components/slidebar/slidebar";
-import Navbar from "./components/narbar/navbar";
-import Dashboad from "./components/pages/dashboad/dashboad";
-import Example from "./components/pages/example/examble";
+import withFirebaseAuth from 'react-with-firebase-auth'
+import * as firebase from 'firebase/app';
+import 'firebase/auth';
+import firebaseConfig from './firebaseConfig';
+
+import Dashboad from "./pages/dashboad/dashboad";
+import Login from "./pages/auth/login";
 import Footer from "./components/footer/footer";
 
 import {
@@ -23,24 +26,12 @@ function App() {
     <Router>
       <div>
         <div className="wrapper ">
+        
 
-          <Slidebar />
+        <Route exact path='/' component={Login} />
 
-          <div className="main-panel">
+        <Route exact path='/dashboad' component={Dashboad} />
 
-
-            <Navbar />
-
-
-
-            <Route exact path='/' component={Example} />
-            <Route exact path='/dashboad' component={Dashboad} />
-            
-
-
-            <Footer />
-
-          </div>
         </div>
       </div>
     </Router>
