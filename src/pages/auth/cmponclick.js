@@ -13,23 +13,23 @@ class Foo extends Component {
       super(props);
       this.handleClick = this.handleClick.bind(this);
     }
-    handleClick() {
+   handleClick() {
       
-      var email; //document.getElementById("useremail").value;
-      var pw;//document.getElementById("userpw").value;
+    //   var email; //document.getElementById("useremail").value;
+    //   var pw;//document.getElementById("userpw").value;
       
-      firebase.auth().signInWithEmailAndPassword("harindulakshankob@gmail.com","H12345").then(function(firebaseUser) {
-          window.confirm("xxxxxxxxxxxxxxxxxxxxxxxxxx<br>xxxxxxxxxxxxxxxxxxxxxxxxx<br>xxxxxxxxxxxxxxxxxxxxxxxxx<br>etext"+email+pw);
+    //   firebase.auth().signInWithEmailAndPassword("harindulakshankob@gmail.com","H12345").then(function(firebaseUser) {
+    //       window.confirm("xxxxxxxxxxxxxxxxxxxxxxxxxx<br>xxxxxxxxxxxxxxxxxxxxxxxxx<br>xxxxxxxxxxxxxxxxxxxxxxxxx<br>etext"+email+pw);
       
-      })
-      .catch(function(error) {
-          // Handle Errors here.
+    //   })
+    //   .catch(function(error) {
+    //       // Handle Errors here.
         
-          window.confirm("sorry"+email+pw +error);
-          var errorCode = error.code;
-          var errorMessage = error.message;
-          // ...
-        });
+    //       window.confirm("sorry"+email+pw +error);
+    //       var errorCode = error.code;
+    //       var errorMessage = error.message;
+    //       // ...
+    //     });
       
         
     }

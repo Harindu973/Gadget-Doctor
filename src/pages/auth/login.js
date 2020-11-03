@@ -2,17 +2,25 @@ import React, { Component } from "react";
 import Navlog from "../../components/narbarlog/navbarlog";
 import Onclickcomp from "../../pages/auth/cmponclick";
 import "./auth.css";
+import {
+    Link
+} from 'react-router-dom';
 
 import withFirebaseAuth from 'react-with-firebase-auth'
 import firebase from 'firebase/app'
 import 'firebase/auth';
 import firebaseConfig from '../../firebaseConfig';
 
-const firebaseApp = firebase.initializeApp(firebaseConfig);
+
+import firebaseApp from '../../firebaseauth';
+
+
+//const firebaseApp = firebase.initializeApp(firebaseConfig);
 
 const firebaseAppAuth = firebaseApp.auth(); const providers = {
     googleProvider: new firebase.auth.GoogleAuthProvider(),
 };
+
 
 
 
@@ -66,7 +74,7 @@ class Login extends Component {
                                 : <p id="text">Please sign in.</p>
                         }
 
-                        <a href="/">
+                        <a>
                             <span />
                             <span />
                             <span />
@@ -78,7 +86,7 @@ class Login extends Component {
                         {
                                 user
                                     ? <button onClick={signOut}>Sign out</button>
-                                    : <button onClick={signInWithGoogle}>or Login With Google</button>
+                                    : <button onClick={signInWithGoogle}><Link to="/dashboad" >or Login With Google</Link></button>
 
                             }
                             

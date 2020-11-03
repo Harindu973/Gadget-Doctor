@@ -5,8 +5,32 @@ import {
     Link
 } from 'react-router-dom';
 
+
+
+import withFirebaseAuth from 'react-with-firebase-auth';
+//import * as firebase from 'firebase/app';
+import 'firebase/auth';
+import firebaseConfig from '../../firebaseConfig';
+
+import firebase from 'firebase/app'
+
+
+import firebaseApp from '../../firebaseauth';
+
+
+const firebaseAppAuth = firebaseApp.auth(); const providers = {
+    googleProvider: new firebase.auth.GoogleAuthProvider(),
+};
+
+
+
 class Slidebar extends Component {
     render() {
+        const {
+            user,
+            signOut,
+            signInWithGoogle,
+        } = this.props;
         return (
             <div className="sidebar" data-color="purple" data-background-color="white" data-image="../assets/img/sidebar-1.jpg">
                 {/*
@@ -32,7 +56,11 @@ class Slidebar extends Component {
                         <li className="nav-item ">
                             <a className="nav-link" href="./user.html">
                                 <i className="material-icons">person</i>
-                                <p>User Profile</p>
+                                <p>                        {
+                            user
+                                ? <p id="text">{user.displayName}</p>
+                                : <p id="text">Your Profile</p>
+                        }</p>
                             </a>
                         </li>
                         <li className="nav-item ">
@@ -75,7 +103,12 @@ class Slidebar extends Component {
                         <li className="nav-item active-pro ">   
                             <a className="nav-link">
                                 <i className="material-icons">assignment_return</i>
-                                <p>LogOut</p>
+                                {
+                                user
+                                    ? <button onClick={signOut}><p>Sign out</p></button>
+                                    : <button onClick={signInWithGoogle}><p>With Google</p></button>
+
+                            }                      
                             </a>
                         </li>
                         </Link>
@@ -85,4 +118,7 @@ class Slidebar extends Component {
         );
     }
 }
-export default Slidebar;
+export default withFirebaseAuth({
+    providers,
+    firebaseAppAuth,
+})(Slidebar);
