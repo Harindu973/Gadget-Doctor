@@ -61,15 +61,15 @@ class Newsletter extends Component {
                     <div className="card card-stats">
                         <div className="card-header card-header-danger card-header-icon">
                             <div className="card-icon">
-                            <i className="material-icons">report</i>
+                                <i className="material-icons">report</i>
                             </div>
                             <p className="card-category">Issues</p>
                             <h3 className="card-title">+245</h3>
                         </div>
                         <div className="card-footer">
                             <div className="stats">
-                                <i className="material-icons">update</i> Just Updated
-                        </div>
+                                <i className="material-icons">Just Updated</i>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -77,4 +77,5 @@ class Newsletter extends Component {
         );
     }
 }
+
 export default Newsletter;
