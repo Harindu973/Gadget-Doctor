@@ -1,8 +1,36 @@
 import React, { Component } from "react";
 //import "./newsletter.css";
 
+import {
+    Link
+} from 'react-router-dom';
+
+
+
+import withFirebaseAuth from 'react-with-firebase-auth';
+//import * as firebase from 'firebase/app';
+import 'firebase/auth';
+import firebaseConfig from '../../firebaseConfig';
+
+import firebase from 'firebase/app'
+
+
+import firebaseApp from '../../firebaseauth';
+
+
+const firebaseAppAuth = firebaseApp.auth(); const providers = {
+    googleProvider: new firebase.auth.GoogleAuthProvider(),
+};
+
+
+
 class Slidebar extends Component {
     render() {
+        const {
+            user,
+            signOut,
+            signInWithGoogle,
+        } = this.props;
         return (
             <div className="sidebar" data-color="purple" data-background-color="white" data-image="../assets/img/sidebar-1.jpg">
                 {/*
@@ -15,16 +43,24 @@ class Slidebar extends Component {
                     </a></div>
                 <div className="sidebar-wrapper">
                     <ul className="nav">
-                        <li className="nav-item active  ">
-                            <a className="nav-link" href="./dashboard.html">
-                                <i className="material-icons">dashboard</i>
-                                <p>Dashboard</p>
-                            </a>
-                        </li>
+                        <Link to="/dashboad">
+                            <li className="nav-item active  ">
+
+                                <a className="nav-link" href="./dashboard.html">
+                                    <i className="material-icons">dashboard</i>
+                                    <p>Dashboard</p>
+                                </a>
+
+                            </li>
+                        </Link>
                         <li className="nav-item ">
                             <a className="nav-link" href="./user.html">
                                 <i className="material-icons">person</i>
-                                <p>User Profile</p>
+                                <p>                        {
+                            user
+                                ? <p id="text">{user.displayName}</p>
+                                : <p id="text">Your Profile</p>
+                        }</p>
                             </a>
                         </li>
                         <li className="nav-item ">
@@ -63,16 +99,26 @@ class Slidebar extends Component {
                                 <p>RTL Support</p>
                             </a>
                         </li>
-                        <li className="nav-item active-pro ">
-                            <a className="nav-link" href="./login.html">
+                        <Link to="/">
+                        <li className="nav-item active-pro ">   
+                            <a className="nav-link">
                                 <i className="material-icons">assignment_return</i>
-                                <p>LogOut</p>
+                                {
+                                user
+                                    ? <button onClick={signOut}><p>Sign out</p></button>
+                                    : <button onClick={signInWithGoogle}><p>With Google</p></button>
+
+                            }                      
                             </a>
                         </li>
+                        </Link>
                     </ul>
                 </div>
             </div>
         );
     }
 }
-export default Slidebar;
+export default withFirebaseAuth({
+    providers,
+    firebaseAppAuth,
+})(Slidebar);

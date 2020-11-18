@@ -18,7 +18,7 @@ class Raw2 extends Component {
                         </div>
                         <div className="">
                             <div className="stats">
-                             <button type="button" class="btn btn-link">Update</button>
+                             <button type="button" class="btn btn-link" ><font color="#4FA953">Update</font></button>
                         </div>
                         </div>
                     </div>
