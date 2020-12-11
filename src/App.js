@@ -10,6 +10,7 @@ import firebaseConfig from './firebaseConfig';
 
 import Dashboad from "./pages/dashboad/dashboad";
 import Login from "./pages/auth/login";
+import Creg from "./pages/car_reg/car_reg";
 import Footer from "./components/footer/footer";
 
 import {
@@ -30,6 +31,7 @@ function App() {
         
 
         <Route exact path='/' component={Login} />
+        <Route exact path='/Creg' component={Creg} />
 
         <Route exact path='/dashboad' component={Dashboad} />
 
