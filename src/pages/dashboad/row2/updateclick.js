@@ -2,7 +2,6 @@ import React, { Component } from "react";
 
 import withFirebaseAuth from 'react-with-firebase-auth';
 import 'firebase/auth';
-import firebaseConfig from '../../../firebaseConfig';
 import firebase from 'firebase/app';
 import firebaseApp from '../../../firebaseauth';
 
@@ -14,9 +13,6 @@ var db = firebase.firestore(firebaseApp);
 const firebaseAppAuth = firebaseApp.auth(); const providers = {
   googleProvider: new firebase.auth.GoogleAuthProvider(),
 };
-
-
-
 
 
 class Foo extends Component {
@@ -37,9 +33,9 @@ class Foo extends Component {
    
     if (window.confirm("Updating current milage as " + Cmileage + "km? "+UID)) {
 
-      db.collection("users").doc(UID).collection("mileage").doc("current").set({
-        mileage: Cmileage,
-        datetime: ts
+      db.collection("users").doc(UID).collection("Cap-63821997").doc("current").update({
+        LastServiceMileage: Cmileage,
+        LastServiceDate: ts
       })
         .then(function () {
           console.log("Document successfully written!");

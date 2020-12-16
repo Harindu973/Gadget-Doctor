@@ -14,7 +14,7 @@ function MyApp() {
           value={value}
         />
         {console.log(value)}
-        <input type="hidden" value={value} name="Calendardate" />
+        <input type="hidden" value={value} id="Calendardate" />
         
       </div>
     );

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Navlog from "../../components/narbarlog/navbarlog";
 import GetDate from "../../components/external/calanderscript";
+import Regbutton from "./regfunction";
 import "../../pages/auth/auth";
 
 import {
@@ -43,28 +44,13 @@ class Car_reg extends Component {
 
                 <div className="login-box">
                     <h2>Register Your vehicle</h2>
-                    <form onsubmit="flogin()">
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <label for="validationCustom04">Vehicle Colour</label>
-                                <div className="user-box">
-                                    <input type="text" id="carcolour" required />
-                                    <label>Colour</label>
-                                </div>
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label for="validationCustom04">Vehicle Colour</label>
-                                <div className="user-box">
-                                    <input type="text" id="carcolour" required />
-                                    <label>Colour</label>
-                                </div>
-                            </div>
-                        </div>
+                    <form>
+                        <br /><br />
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="validationCustom04">Brand</label>
-                                <select class="custom-select" id="validationCustom04" required>
-                                    <option selected disabled value="">Honda</option>
+                                <select class="custom-select" id="carBrand" required>
+                                    <option selected disabled value="Honda">Honda</option>
                                     <option>...</option>
                                     <option>...</option>
                                     <option>...</option>
@@ -72,8 +58,8 @@ class Car_reg extends Component {
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="validationCustom04">Model</label>
-                                <select class="custom-select" id="validationCustom04" required>
-                                    <option selected disabled value="">Grace</option>
+                                <select class="custom-select" id="carModel" required>
+                                    <option selected disabled value="Grace">Grace</option>
                                     <option>...</option>
                                     <option>...</option>
                                     <option>...</option>
@@ -83,7 +69,7 @@ class Car_reg extends Component {
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="validationCustom04">Model Year</label>
-                                <select class="custom-select" id="validationCustom04" required>
+                                <select class="custom-select" id="modelYear" required>
                                     <option selected disabled value="2022">2022</option>
                                     <option>2021</option>
                                     <option>2020</option>
@@ -102,31 +88,42 @@ class Car_reg extends Component {
                             <div class="form-group col-md-6">
                                 <label for="validationCustom04">Vehicle Colour</label>
                                 <div className="user-box">
-                                    <input type="text" id="carcolour" required />
+                                    <input type="text" id="carColour" required />
                                     <label>Colour</label>
                                 </div>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-6">
-                            <div class="form-row">&nbsp;</div>
-                           
+                               
+
                                 <div class="form-row">
-                                    
-                                        <label for="validationCustom04">Mileage at Last Service</label>
-                                        <div className="user-box">
-                                            <input type="number" id="carcolour" required />
-                                            <label>Mileage</label>
-                                        </div>
-                                   
+
+                                    <label for="validationCustom04">Vehicle Number</label>
+                                    <div className="user-box">
+                                        <input type="text" id="vNumber" required />
+                                        <label>Vehicle No</label>
+                                    </div>
+
+                                </div>
+                                <div class="form-row">&nbsp;</div>
+
+                                <div class="form-row">
+
+                                    <label for="validationCustom04">Current Mileage</label>
+                                    <div className="user-box">
+                                        <input type="number" id="currentMileage" required />
+                                        <label>Mileage</label>
+                                    </div>
+
                                 </div>
                                 <div class="form-row">&nbsp;</div>
                                 <div class="form-row">
-                                        <label for="validationCustom04">Upload a photo of your Vehicle</label>
-                                        <div class="custom-file">
-                                            <input type="file" class="custom-file" id="customFile" />
-                                            <label class="custom-file-label" for="customFile">Choose file</label>
-                                        </div>               
+                                    <label for="validationCustom04">Mileage at Last Service</label>
+                                    <div className="user-box">
+                                        <input type="number" id="lastSMileage" required />
+                                        <label>Mileage</label>
+                                    </div>
                                 </div>
                             </div>
                             <div class="form-group col-md-6">
@@ -146,9 +143,10 @@ class Car_reg extends Component {
                             <span />
                             <span />
                             <span />
+                            <Regbutton />
                         </a>
 
-                        <input type="submit" />
+
 
                     </form>
                 </div>

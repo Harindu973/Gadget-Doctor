@@ -46,10 +46,10 @@ class Newsletter extends Component {
 
 
 
-        db.collection('users').doc(UID).collection('mileage').doc('current')
+        db.collection('users').doc(UID).collection('Cap-63821997').doc('current')
         .onSnapshot(function(doc) {
-            CurrentMileage = doc.get('mileage');
-            date = doc.get('datetime');
+            CurrentMileage = doc.get('LastServiceMileage');
+            date = doc.get('LastServiceDate');
             console.log(CurrentMileage);
             console.log(date);
             var icon = "material-icons";
