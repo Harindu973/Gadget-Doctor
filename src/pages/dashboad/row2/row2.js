@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 import './row2.css';
+import Update from "./updateclick";
+
+
 
 class Raw2 extends Component {
     render() {
@@ -13,12 +16,12 @@ class Raw2 extends Component {
                         <div className="card-body">
                             <p className="card-category">
                             <h4 className="card-title"><b>Update Mileage Manually</b></h4>
-                                <input type="number" class="form-control" id="inputPassword2" placeholder="Enter Your Currunt Mileage" min="0" max="1000000"></input>
+                                <input type="number" class="form-control" id="inputmileage" placeholder="Enter Your Currunt Mileage" min="0" max="1000000"></input>
                             </p>
                         </div>
                         <div className="">
                             <div className="stats">
-                             <button type="button" class="btn btn-link" ><font color="#4FA953">Update</font></button>
+                             <Update />
                         </div>
                         </div>
                     </div>
@@ -59,4 +62,8 @@ class Raw2 extends Component {
         );
     }
 }
+
+
+
+
 export default Raw2;

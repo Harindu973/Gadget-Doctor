@@ -4,15 +4,34 @@ import {
 } from 'react-router-dom';
 //import "./newsletter.css";
 
+import withFirebaseAuth from 'react-with-firebase-auth'
+import firebase from 'firebase/app'
+import 'firebase/auth';
+
+
+import firebaseApp from '../../firebaseauth';
+
+
+//const firebaseApp = firebase.initializeApp(firebaseConfig);
+
+const firebaseAppAuth = firebaseApp.auth(); const providers = {
+    googleProvider: new firebase.auth.GoogleAuthProvider(),
+};
+
 class Navbar extends Component {
     render() {
+        const {
+            user,
+            signOut,
+            signInWithGoogle,
+        } = this.props;
         return (
             <nav className="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
                 <div className="container-fluid">
                     <div className="navbar-wrapper">
-                    <Link to="/">
-                        <b><font color="#eee">Gadget Doctor</font></b>
-                    </Link>
+                        <Link to="/">
+                            <b><font color="#eee">Gadget Doctor</font></b>
+                        </Link>
                     </div>
                     <button className="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="sr-only">Toggle navigation</span>
@@ -69,6 +88,14 @@ class Navbar extends Component {
                                     <a className="dropdown-item" href="#">Log out</a>
                                 </div>
                             </li>
+                            <li>
+                            {
+                                user
+                                    ? <button onClick={signOut}>Sign out</button>
+                                    : <button onClick={signInWithGoogle}>Login</button>
+
+                            }
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -76,4 +103,7 @@ class Navbar extends Component {
         );
     }
 }
-export default Navbar;
+export default withFirebaseAuth({
+    providers,
+    firebaseAppAuth,
+})(Navbar);

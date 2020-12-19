@@ -10,19 +10,15 @@ import {
 import withFirebaseAuth from 'react-with-firebase-auth';
 //import * as firebase from 'firebase/app';
 import 'firebase/auth';
-import firebaseConfig from '../../firebaseConfig';
 
 import firebase from 'firebase/app'
 
 
 import firebaseApp from '../../firebaseauth';
 
-
 const firebaseAppAuth = firebaseApp.auth(); const providers = {
     googleProvider: new firebase.auth.GoogleAuthProvider(),
 };
-
-
 
 class Slidebar extends Component {
     render() {
@@ -58,7 +54,7 @@ class Slidebar extends Component {
                                 <i className="material-icons">person</i>
                                 <p>                        {
                             user
-                                ? <p id="text">{user.displayName}</p>
+                                ? <p id="text">{user.uid}</p>
                                 : <p id="text">Your Profile</p>
                         }</p>
                             </a>
@@ -118,6 +114,7 @@ class Slidebar extends Component {
         );
     }
 }
+
 export default withFirebaseAuth({
     providers,
     firebaseAppAuth,

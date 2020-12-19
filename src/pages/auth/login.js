@@ -1,15 +1,16 @@
 import React, { Component } from "react";
 import Navlog from "../../components/narbarlog/navbarlog";
+import CarMen from '../carMenu/carMenu';
 import Onclickcomp from "../../pages/auth/cmponclick";
 import "./auth.css";
 import {
     Link
 } from 'react-router-dom';
+import { Redirect, Route } from "react-router";
 
 import withFirebaseAuth from 'react-with-firebase-auth'
 import firebase from 'firebase/app'
 import 'firebase/auth';
-import firebaseConfig from '../../firebaseConfig';
 
 
 import firebaseApp from '../../firebaseauth';
@@ -67,12 +68,17 @@ class Login extends Component {
                             <input type="password" id="userpw" required />
                             <label>Password</label>
                         </div>
+                        
                         <img src="" className="App-logo" alt="logo" />
                         {
                             user
-                                ? <p id="text">Hello, {user.displayName}</p>
+                                ? <p id="text">Hello, {user.displayName}<Redirect to={{
+                                    pathname: '/carmenu',
+                                    state: { id: user.uid }
+                                }} /></p>
                                 : <p id="text">Please sign in.</p>
                         }
+                        
 
                         <a>
                             <span />
@@ -86,7 +92,7 @@ class Login extends Component {
                         {
                                 user
                                     ? <button onClick={signOut}>Sign out</button>
-                                    : <button onClick={signInWithGoogle}><Link to="/dashboad" >or Login With Google</Link></button>
+                                    : <button onClick={signInWithGoogle}>or Login With Google</button>
 
                             }
                             

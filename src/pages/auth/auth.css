@@ -8,6 +8,10 @@ html {
 
   }
   
+  input[required] {
+    background-color: blue;
+  }
+
   .login-box {
     position: absolute;
     top: 50%;
@@ -19,6 +23,8 @@ html {
     box-sizing: border-box;
     box-shadow: 0 15px 25px rgba(0,0,0,.6);
     border-radius: 10px;
+    margin-top: 100px;
+  
   }
 
   @media (max-width: 1000px) {
@@ -34,6 +40,8 @@ html {
       box-sizing: border-box;
       box-shadow: 0 15px 25px rgba(0,0,0,.6);
       border-radius: 10px;
+      margin-top: 620px;
+      
     }
   }
   
@@ -195,3 +203,4 @@ html {
 #text{
   color: #fff;
 }
+

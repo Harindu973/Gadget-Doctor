@@ -1,0 +1,128 @@
+import React, { Component } from "react";
+import Navlog from "../../components/narbarlog/navbarlog";
+import "./carMenu.css";
+
+import withFirebaseAuth from 'react-with-firebase-auth';
+import 'firebase/auth';
+import firebase from 'firebase/app';
+import firebaseApp from '../../firebaseauth';
+
+import 'firebase/firestore';
+
+
+var db = firebase.firestore(firebaseApp);
+var UID;
+var Vno;
+
+var docID;
+
+const firebaseAppAuth = firebaseApp.auth(); const providers = {
+    googleProvider: new firebase.auth.GoogleAuthProvider(),
+};
+
+
+
+class carMenu extends Component {
+    render() {
+        const {
+            user,
+            signOut,
+            signInWithGoogle,
+        } = this.props;
+
+        {
+            user
+                ? UID = user.uid
+                : UID = 'NO Data'
+        }
+        console.log(UID);
+       
+
+       var i = 0;
+       var car;
+
+
+        db.collection("users").doc(UID).collection('Vehicles').get().then(function(querySnapshot) {
+            querySnapshot.forEach(function(doc) {
+
+                docID = doc.id; // randomly generated document ID
+                var data = doc.data(); // key-value pairs from the document
+                console.log(docID);
+               // console.log(data);
+
+               var docIDC = doc.exists;
+               console.log(docIDC);
+
+                i = i + 1;
+                console.log(i);
+              
+                db.collection('users').doc(UID).collection('Vehicles').doc(docID)
+                .onSnapshot(function(doc) {
+                    car = doc.get('car');
+                    
+                    console.log(car);
+                    document.getElementById(i).innerHTML = car;
+                    
+                });
+                
+
+                
+            });
+        });
+
+
+
+    //    db.collection("users").doc(UID).collection("Vehicles").get().then(function(querySnapshot) {
+    //         querySnapshot.forEach(function(doc) {
+    //             console.log(doc.data());
+    //             // doc.data() is never undefined for query doc snapshots
+    //             console.log("Doc is" + doc.id, " => ", doc.data());
+    //         });
+    //     });
+
+    // db.collection('users').doc(UID).collection('Vehicles').doc('CAP-6382').collection("details").doc("vDetails")
+    // .onSnapshot(function(doc) {
+    //     CurrentMileage = doc.get('LastServiceMileage');
+    //     console.log(CurrentMileage);
+    //     var icon = "material-icons";
+    //     document.getElementById("p1").innerHTML = CurrentMileage;
+       
+    // });
+
+
+        return (
+            <div>
+                <Navlog />
+                <div class="menu">
+
+                    <div className="btnbox">
+                        <form>
+                            <buton type="submit" href="#"><center><h2>Select Vehicle</h2><h3 id="1">CAP-</h3></center></buton>
+                        </form>
+                    </div>
+                    <div className="btnbox">
+                        <form>
+                            <buton type="submit" href="#"><center><h2>Select Vehicle</h2><h3 id="2">CAP-</h3></center></buton>
+                        </form>
+                    </div>
+                    <div className="btnbox">
+                        <form>
+                            <buton type="submit" href="#"><center><h2>Select Vehicle</h2><h3 id="3">CAP-6</h3></center></buton>
+                        </form>
+                    </div>
+                    <div className="btnbox">
+                        <form>
+                            <buton type="submit" href="#"><center><h2>Select Vehicle</h2><h3 id="4">CAP-6</h3></center></buton>
+                        </form>
+                    </div>
+                </div>
+
+
+            </div>
+        );
+    }
+}
+export default withFirebaseAuth({
+    providers,
+    firebaseAppAuth,
+})(carMenu);
