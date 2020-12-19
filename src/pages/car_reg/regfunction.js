@@ -47,7 +47,7 @@ class reg extends Component {
 
         if (window.confirm("Updating current milage as " + Cmileage + "km? " + UID)) {
 
-            db.collection("users").doc(UID).collection(vNumber).doc("current").set({
+            db.collection("users").doc(UID).collection("Vehicles").doc(vNumber).collection("details").doc("vDetails").set({
                 mileage: Cmileage,
                 datetime: ts,
                 Vehicle: vNumber,

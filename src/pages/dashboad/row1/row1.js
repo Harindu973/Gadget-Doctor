@@ -2,7 +2,6 @@ import React, { Component } from "react";
 
 import withFirebaseAuth from 'react-with-firebase-auth';
 import 'firebase/auth';
-import firebaseConfig from '../../../firebaseConfig';
 import firebase from 'firebase/app';
 import firebaseApp from '../../../firebaseauth';
 
@@ -46,7 +45,7 @@ class Newsletter extends Component {
 
 
 
-        db.collection('users').doc(UID).collection('Cap-63821997').doc('current')
+        db.collection('users').doc(UID).collection('Vehicles').doc('CAP-6382').collection("details").doc("vDetails")
         .onSnapshot(function(doc) {
             CurrentMileage = doc.get('LastServiceMileage');
             date = doc.get('LastServiceDate');

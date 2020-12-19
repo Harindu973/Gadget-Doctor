@@ -12,6 +12,7 @@ import Dashboad from "./pages/dashboad/dashboad";
 import Login from "./pages/auth/login";
 import Creg from "./pages/car_reg/car_reg";
 import Footer from "./components/footer/footer";
+import CarMenu from "./pages/carMenu/carMenu";
 
 import {
   BrowserRouter as Router,
@@ -31,7 +32,8 @@ function App() {
         
 
         <Route exact path='/' component={Login} />
-        <Route exact path='/Creg' component={Creg} />
+        <Route exact path='/creg' component={Creg} />
+        <Route exact path='/carmenu' component={CarMenu} />
 
         <Route exact path='/dashboad' component={Dashboad} />
 
