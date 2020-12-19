@@ -30,7 +30,6 @@ const firebaseAppAuth = firebaseApp.auth(); const providers = {
 class Newsletter extends Component {
     render() {
 
-
         const {
             user,
             signOut,
@@ -55,6 +54,7 @@ class Newsletter extends Component {
             document.getElementById("p1").innerHTML = CurrentMileage+"<small>KM</small>";
             document.getElementById("p2").innerHTML = " Last Synced on: "+date;
         });
+        
         return (
             <div className="row">
                 <div className="col-lg-3 col-md-6 col-sm-6">

@@ -83,8 +83,6 @@ class reg extends Component {
     render() {
         const {
             user,
-            signOut,
-            signInWithGoogle,
         } = this.props;
 
         return (
