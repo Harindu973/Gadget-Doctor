@@ -143,7 +143,7 @@ class Car_reg extends Component {
                             <span />
                             <span />
                             <span />
-                            <Regbutton />
+                            <Regbutton id={this.props.location.state.id} />
                         </a>
 
 

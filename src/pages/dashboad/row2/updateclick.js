@@ -33,7 +33,7 @@ class Foo extends Component {
    
     if (window.confirm("Updating current milage as " + Cmileage + "km? "+UID)) {
 
-      db.collection("users").doc(UID).collection("Cap-63821997").doc("current").update({
+      db.collection("users").doc(UID).collection("Vehicles").doc(this.props.id).update({
         LastServiceMileage: Cmileage,
         LastServiceDate: ts
       })

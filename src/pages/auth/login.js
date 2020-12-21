@@ -73,7 +73,12 @@ class Login extends Component {
                         <img src="" className="App-logo" alt="logo" />
                         {
                             user
-                                ? <p id="text">Hello,<Redirect to="/carmenu" />
+                                ? <p id="text">Hello,<Redirect to={{
+                                    pathname: '/carmenu',
+                                    state: {
+                                      idlog: user.uid
+                                    }
+                                  }} />
                                 
                             </p>
                                 : <p id="text">Please sign in.</p>

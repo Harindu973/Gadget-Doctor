@@ -30,6 +30,8 @@ class Login extends Component {
             signOut,
             signInWithGoogle,
         } = this.props;
+
+
         return (
             <div>
                 <Slidebar />
@@ -37,8 +39,8 @@ class Login extends Component {
                     <Navbar />
                     <div className="content">
                         <div className="container-fluid">
-                            <Row1 />
-                            <Row2 />
+                            <Row1 id={this.props.location.state.id} />
+                            <Row2 id={this.props.location.state.id} />
                             <div className="row">
                                 <div className="col-lg-6 col-md-12">
                                     <div className="card">
