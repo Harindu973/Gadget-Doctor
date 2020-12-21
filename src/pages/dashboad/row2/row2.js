@@ -21,7 +21,7 @@ class Raw2 extends Component {
                         </div>
                         <div className="">
                             <div className="stats">
-                             <Update />
+                             <Update id={this.props.id} />
                         </div>
                         </div>
                     </div>

@@ -9,6 +9,8 @@ import 'firebase/auth';
 import firebaseConfig from './firebaseConfig';
 
 import Dashboad from "./pages/dashboad/dashboad";
+import Row1 from "./pages/dashboad/row1/row1";
+
 import Login from "./pages/auth/login";
 import Creg from "./pages/car_reg/car_reg";
 import Footer from "./components/footer/footer";
@@ -33,9 +35,11 @@ function App() {
 
         <Route exact path='/' component={Login} />
         <Route exact path='/creg' component={Creg} />
-        <Route exact path='/carmenu' component={CarMenu} />
+        
+        <Route path="/carmenu" render={(props) => <CarMenu {...props}/>}/>
+        <Route path="/dashboad" render={(props) => <Dashboad {...props}/>}/>
 
-        <Route exact path='/dashboad' component={Dashboad} />
+        {/* <Route exact path='/dashboad' component={Dashboad} /> */}
 
         </div>
       </div>

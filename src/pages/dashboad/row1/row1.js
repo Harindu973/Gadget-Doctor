@@ -30,6 +30,7 @@ const firebaseAppAuth = firebaseApp.auth(); const providers = {
 class Newsletter extends Component {
     render() {
 
+        console.log(this.props.id);
 
         const {
             user,
@@ -45,7 +46,7 @@ class Newsletter extends Component {
 
 
 
-        db.collection('users').doc(UID).collection('Vehicles').doc('CAP-6382').collection("details").doc("vDetails")
+        db.collection('users').doc(UID).collection('Vehicles').doc(this.props.id)
         .onSnapshot(function(doc) {
             CurrentMileage = doc.get('LastServiceMileage');
             date = doc.get('LastServiceDate');
@@ -55,6 +56,7 @@ class Newsletter extends Component {
             document.getElementById("p1").innerHTML = CurrentMileage+"<small>KM</small>";
             document.getElementById("p2").innerHTML = " Last Synced on: "+date;
         });
+        
         return (
             <div className="row">
                 <div className="col-lg-3 col-md-6 col-sm-6">

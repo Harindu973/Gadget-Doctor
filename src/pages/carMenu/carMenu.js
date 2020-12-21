@@ -1,33 +1,35 @@
-import React from "react";
+import React from 'react';
+import {
+    Link
+} from 'react-router-dom';
 import Navlog from "../../components/narbarlog/navbarlog";
 import "./carMenu.css";
+
 
 import withFirebaseAuth from 'react-with-firebase-auth';
 import 'firebase/auth';
 import firebase from 'firebase/app';
 import firebaseApp from '../../firebaseauth';
 
+
 import 'firebase/firestore';
 import Navbar from "../../components/narbarlog/navbarlog";
 import userEvent from "@testing-library/user-event";
 
+import "../auth/login";
 
-
-var UID = "APguG6g0IlZvVYuh08poBfZcxh02";
 
 
 const firebaseAppAuth = firebaseApp.auth(); const providers = {
     googleProvider: new firebase.auth.GoogleAuthProvider(),
 };
 
+//console.log("property_id",this.props.location.state.property_id);
 
 
+function CarMenu(para) {
 
-
-
-function CarMenu() {
-
-    
+    console.log("yadcjbsduycjdsbcid ",para);
 
     // const {
     //     user,
@@ -41,7 +43,7 @@ function CarMenu() {
     //         : UID = 'NO Data'
     // }
 
-    
+
 
     const [spells, setSpells] = React.useState([])
 
@@ -49,23 +51,44 @@ function CarMenu() {
 
         const fetchData = async () => {
             const db = firebase.firestore(firebaseApp)
-            const data = await db.collection("users").doc(UID).collection('Vehicles').get()
-            setSpells(data.docs.map(doc => doc.data()))
+            const data = await db.collection("users").doc(para.location.state.idlog).collection('Vehicles').get()
+            setSpells(data.docs.map(doc => ({...doc.data(), id: doc.id})))
+
         }
+
+        
         fetchData()
     }, [])
+
+    var sid;
 
     return (
         <div>
             <Navbar />
         <div class="menu">
+            
 
             <div className="btnbox">
-                <form>
+            <center><h1>Select Your Vehicle</h1></center><br /><br /><br />
+                
                     {spells.map(spell => (
-                    <buton type="submit" key={spell.name}><center><h2></h2><h3 id="1">spell is : {spell.car}</h3></center></buton>
+
+                    <Link to={{
+                        pathname: '/dashboad',
+                        state: {
+                          id: spell.id
+                        }
+                      }}><form><input type="hidden" name="ChoosedCar" value={sid = spell.id} /><input type="submit" class="btnsubmit" value={spell.car} /></form></Link>
                     ))}
-                </form>
+
+                <Link  to={{
+                        pathname: '/creg',
+                        state: {
+                          id: sid
+                        }
+                      }}><input type="button" value="Add New" /></Link>
+                      
+                
             </div>
         </div>
         </div>

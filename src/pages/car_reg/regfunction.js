@@ -16,13 +16,14 @@ const firebaseAppAuth = firebaseApp.auth(); const providers = {
 
 class reg extends Component {
 
-
+    
     constructor(props) {
         super(props);
         this.handleClick = this.handleClick.bind(this);
 
     }
     handleClick() {
+
 
 
         var UID = document.getElementById("UID").value;
@@ -37,8 +38,8 @@ class reg extends Component {
         
        
        
-
-
+        console.log("dvdvdvv",this.props.id);
+       
 
 
 
@@ -47,7 +48,8 @@ class reg extends Component {
 
         if (window.confirm("Updating current milage as " + Cmileage + "km? " + UID)) {
 
-            db.collection("users").doc(UID).collection("Vehicles").doc(vNumber).collection("details").doc("vDetails").set({
+            db.collection("users").doc(UID).collection("Vehicles").add({
+                car: carModel,
                 mileage: Cmileage,
                 datetime: ts,
                 Vehicle: vNumber,
@@ -83,9 +85,9 @@ class reg extends Component {
     render() {
         const {
             user,
-            signOut,
-            signInWithGoogle,
         } = this.props;
+
+        //console.log(this.props.id);
 
         return (
             <div>

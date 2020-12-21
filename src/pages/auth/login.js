@@ -6,7 +6,8 @@ import "./auth.css";
 import {
     Link
 } from 'react-router-dom';
-import { Redirect, Route } from "react-router";
+import Route from "react-router";
+import { Redirect } from "react-router-dom";
 
 import withFirebaseAuth from 'react-with-firebase-auth'
 import firebase from 'firebase/app'
@@ -72,10 +73,14 @@ class Login extends Component {
                         <img src="" className="App-logo" alt="logo" />
                         {
                             user
-                                ? <p id="text">Hello, {user.displayName}<Redirect to={{
+                                ? <p id="text">Hello,<Redirect to={{
                                     pathname: '/carmenu',
-                                    state: { id: user.uid }
-                                }} /></p>
+                                    state: {
+                                      idlog: user.uid
+                                    }
+                                  }} />
+                                
+                            </p>
                                 : <p id="text">Please sign in.</p>
                         }
                         
@@ -95,6 +100,7 @@ class Login extends Component {
                                     : <button onClick={signInWithGoogle}>or Login With Google</button>
 
                             }
+                            
                             
                             
                     </form>
