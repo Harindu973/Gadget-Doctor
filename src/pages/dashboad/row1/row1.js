@@ -9,7 +9,8 @@ import 'firebase/firestore';
 
 
 var db = firebase.firestore(firebaseApp);
-var CurrentMileage ='100';
+var LastMilage ='100';
+var mileage;
 var date;
 var UID;
 
@@ -48,13 +49,17 @@ class Newsletter extends Component {
 
         db.collection('users').doc(UID).collection('Vehicles').doc(this.props.id)
         .onSnapshot(function(doc) {
-            CurrentMileage = doc.get('LastServiceMileage');
-            date = doc.get('LastServiceDate');
-            console.log(CurrentMileage);
+            LastMilage = parseInt(doc.get('LastServiceMileage'));
+            mileage = doc.get('mileage');
+            date = doc.get('lastSynced');
+            console.log(mileage);
             console.log(date);
             var icon = "material-icons";
-            document.getElementById("p1").innerHTML = CurrentMileage+"<small>KM</small>";
+            document.getElementById("p1").innerHTML = mileage+"<small>KM</small>";
             document.getElementById("p2").innerHTML = " Last Synced on: "+date;
+            //var j = parseInt(LastMilage);
+
+            document.getElementById("next").innerHTML = LastMilage+5000 +"<small>KM</small>";
         });
         
         return (
@@ -83,7 +88,7 @@ class Newsletter extends Component {
                                 <i className="material-icons">handyman</i>
                             </div>
                             <p className="card-category">Next Service</p>
-                            <h3 className="card-title">25000
+                            <h3 className="card-title" id="next">0
                           <small>KM</small>
                             </h3>
                         </div>

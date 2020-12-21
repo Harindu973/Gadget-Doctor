@@ -25,8 +25,8 @@ class Foo extends Component {
   handleClick() {
 
 
-
-    var Cmileage = document.getElementById("inputmileage").value;
+    var Cmileage = 123;
+    Cmileage = document.getElementById("inputmileage").value;
     var UID = document.getElementById("UID").value;
     var datetime = new Date();
     var ts = datetime.toISOString().slice(0,10);
@@ -34,8 +34,8 @@ class Foo extends Component {
     if (window.confirm("Updating current milage as " + Cmileage + "km? "+UID)) {
 
       db.collection("users").doc(UID).collection("Vehicles").doc(this.props.id).update({
-        LastServiceMileage: Cmileage,
-        LastServiceDate: ts
+        mileage: Cmileage,
+        lastSynced: ts
       })
         .then(function () {
           console.log("Document successfully written!");
