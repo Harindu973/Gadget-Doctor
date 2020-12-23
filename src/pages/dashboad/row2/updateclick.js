@@ -48,6 +48,7 @@ class Fooo extends Component {
 
       // Save it!
       console.log('Thing was saved to the database.');
+      document.getElementById("inputmileage").value="";
     } else {
       // Do nothing!
       console.log('Thing was not saved to the database.');

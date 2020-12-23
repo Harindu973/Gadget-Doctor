@@ -51,6 +51,7 @@ class Foo extends Component {
 
       // Save it!
       console.log('Thing was saved to the database.');
+      document.getElementById("inputservice").value="";
     } else {
       // Do nothing!
       console.log('Thing was not saved to the database.');
