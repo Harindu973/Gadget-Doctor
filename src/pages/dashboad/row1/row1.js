@@ -9,8 +9,10 @@ import 'firebase/firestore';
 
 
 var db = firebase.firestore(firebaseApp);
-var CurrentMileage ='100';
+var LastMilage ='100';
+var mileage;
 var date;
+var nextService;
 var UID;
 
 const firebaseAppAuth = firebaseApp.auth(); const providers = {
@@ -48,13 +50,19 @@ class Newsletter extends Component {
 
         db.collection('users').doc(UID).collection('Vehicles').doc(this.props.id)
         .onSnapshot(function(doc) {
-            CurrentMileage = doc.get('LastServiceMileage');
-            date = doc.get('LastServiceDate');
-            console.log(CurrentMileage);
+            LastMilage = parseInt(doc.get('LastServiceMileage'));
+            mileage = doc.get('mileage');
+            date = doc.get('lastSynced');
+            nextService = doc.get('LastServiceDate');
+            console.log(mileage);
             console.log(date);
             var icon = "material-icons";
-            document.getElementById("p1").innerHTML = CurrentMileage+"<small>KM</small>";
+            document.getElementById("p1").innerHTML = mileage+"<small>KM</small>";
             document.getElementById("p2").innerHTML = " Last Synced on: "+date;
+            document.getElementById("p3").innerHTML = " Or Before: "+nextService;
+            //var j = parseInt(LastMilage);
+
+            document.getElementById("next").innerHTML = LastMilage+5000 +"<small>KM</small>";
         });
         
         return (
@@ -66,12 +74,12 @@ class Newsletter extends Component {
                                 <i className="material-icons">drive_eta</i>
                             </div>
                             <p className="card-category">Mileage</p>
-                            <h3 className="card-title"><h3 id="p1" className="card-title">0
+                            <h3 className="card-title"><h3 id="p1" className="card-title">Loading
                             </h3></h3>
                         </div>
                         <div className="card-footer">
                             <div className="stats">
-                            <i className="material-icons">date_range</i><i id="p2"> Last Synced on: 2020 Oct 21</i>
+                            <i className="material-icons">date_range</i><i id="p2"> Last Synced on: Loading</i>
                         </div>
                         </div>
                     </div>
@@ -82,15 +90,13 @@ class Newsletter extends Component {
                             <div className="card-icon">
                                 <i className="material-icons">handyman</i>
                             </div>
-                            <p className="card-category">Next Service</p>
-                            <h3 className="card-title">25000
-                          <small>KM</small>
+                            <p className="card-category">Next Service at</p>
+                            <h3 className="card-title" id="next">Loading
                             </h3>
                         </div>
                         <div className="card-footer">
                             <div className="stats">
-                                <i className="material-icons text-danger">warning</i>
-                                <a href="javascript:;">Or before : 2021 Jan 20</a>
+                                <i className="material-icons">date_range</i><i id="p3"> Or Before: Loading</i>
                             </div>
                         </div>
                     </div>

@@ -15,27 +15,30 @@ const firebaseAppAuth = firebaseApp.auth(); const providers = {
 };
 
 
-class Fooo extends Component {
+class Foo extends Component {
 
   constructor(props) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
 
   }
+
   handleClick() {
 
 
     var Cmileage = 123;
-    Cmileage = document.getElementById("inputmileage").value;
-    var UID = document.getElementById("UID").value;
-    var datetime = new Date();
-    var ts = datetime.toISOString().slice(0,10);
+    Cmileage = document.getElementById("inputservice").value;
+    var UID = document.getElementById("UIDService").value;
+    var date = new Date();
+    date.setMonth(date.getMonth() + 6);
+    console.log(date);
    
-    if (window.confirm("Do you want to update your Current Mileage as " + Cmileage+"km ?")) {
+   
+    if (window.confirm("Do you want to update your Serive Status as " + Cmileage+"km ?")) {
 
       db.collection("users").doc(UID).collection("Vehicles").doc(this.props.id).update({
-        mileage: Cmileage,
-        lastSynced: ts
+        LastServiceMileage: Cmileage,
+        LastServiceDate: date.toDateString()
       })
         .then(function () {
           console.log("Document successfully written!");
@@ -48,7 +51,7 @@ class Fooo extends Component {
 
       // Save it!
       console.log('Thing was saved to the database.');
-      document.getElementById("inputmileage").value="";
+      document.getElementById("inputservice").value="";
     } else {
       // Do nothing!
       console.log('Thing was not saved to the database.');
@@ -67,7 +70,7 @@ class Fooo extends Component {
       <div>
         {
                             user
-                                ? <input type="hidden" id="UID" value={user.uid}></input>
+                                ? <input type="hidden" id="UIDService" value={user.uid}></input>
                                 : <input type="hidden"></input>
                         }
         <button type="button" onClick={this.handleClick} class="btn btn-link" ><font color="#4FA953">Update</font></button> 
@@ -79,4 +82,4 @@ class Fooo extends Component {
 export default withFirebaseAuth({
   providers,
   firebaseAppAuth,
-})(Fooo);
+})(Foo);

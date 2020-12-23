@@ -2,7 +2,6 @@ import React from 'react';
 import {
     Link
 } from 'react-router-dom';
-import Navlog from "../../components/narbarlog/navbarlog";
 import "./carMenu.css";
 
 
@@ -14,7 +13,7 @@ import firebaseApp from '../../firebaseauth';
 
 import 'firebase/firestore';
 import Navbar from "../../components/narbarlog/navbarlog";
-import userEvent from "@testing-library/user-event";
+
 
 import "../auth/login";
 
@@ -24,24 +23,13 @@ const firebaseAppAuth = firebaseApp.auth(); const providers = {
     googleProvider: new firebase.auth.GoogleAuthProvider(),
 };
 
-//console.log("property_id",this.props.location.state.property_id);
+
 
 
 function CarMenu(para) {
 
     console.log("yadcjbsduycjdsbcid ",para);
 
-    // const {
-    //     user,
-    //     signOut,
-    //     signInWithGoogle,
-    // } = this.props;
-
-    // {
-    //     user
-    //         ? UID = user.uid
-    //         : UID = 'NO Data'
-    // }
 
 
 
@@ -76,7 +64,8 @@ function CarMenu(para) {
                     <Link to={{
                         pathname: '/dashboad',
                         state: {
-                          id: spell.id
+                          id: spell.id,
+                          model: spell.car
                         }
                       }}><form><input type="hidden" name="ChoosedCar" value={sid = spell.id} /><input type="submit" class="btnsubmit" value={spell.car} /></form></Link>
                     ))}

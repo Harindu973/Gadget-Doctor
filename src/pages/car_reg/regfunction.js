@@ -58,6 +58,7 @@ class reg extends Component {
                 Year: modelYear,
                 Colour: carColour,
                 LastServiceMileage: lastSMileage,
+                lastSynced: Calendardate,
                 LastServiceDate: Calendardate
 
             })
