@@ -10,19 +10,19 @@ import 'firebase/auth';
 import firebase from 'firebase/app';
 import firebaseApp from '../../../firebaseauth';
 
+import SpellInput from './spellinput.js';
+
 
 import 'firebase/firestore';
 
 
 import "../../auth/login";
-
+import "./spell.css";
 
 
 const firebaseAppAuth = firebaseApp.auth(); const providers = {
     googleProvider: new firebase.auth.GoogleAuthProvider(),
 };
-
-
 
 
 function Suggessions(props) {
@@ -38,16 +38,18 @@ function Suggessions(props) {
 
         const fetchData = async () => {
             const db = firebase.firestore(firebaseApp)
-            const data = await db.collection("vehicles").doc("Suggessions").collection(props.model).get()
+            const data = await db.collection("history").doc(props.model.id).collection(props.model.brand).get()
             setSpells(data.docs.map(doc => ({ ...doc.data(), id: doc.id })))
+
+
+           
+
+
 
         }
 
-
         fetchData()
     }, [])
-
-
 
     return (
         <div className="col-lg-6 col-md-12">
@@ -87,27 +89,18 @@ function Suggessions(props) {
 
 
                                     {spells.map(spell => (
-
                                         <tr>
                                             <td>
-                                                <div className="form-check">
-                                                    <label className="form-check-label">
-                                                        <input className="form-check-input" type="checkbox" defaultValue defaultChecked />
-                                                        <span className="form-check-sign">
-                                                            <span className="check" />
-                                                        </span>
-                                                    </label>
-                                                </div>
+                                                <i className="material-icons">{spell.status}</i>
                                             </td>
+                                            <td><b>{spell.service}</b></td>
                                             <td>{spell.serviceDesc}</td>
-                                            <td className="td-actions text-right">
-                                                <button type="button" rel="tooltip" title="Edit Task" className="btn btn-primary btn-link btn-sm">
-                                                    <i className="material-icons">edit</i>
-                                                </button>
-                                                <button type="button" rel="tooltip" title="Remove" className="btn btn-danger btn-link btn-sm">
-                                                    <i className="material-icons">close</i>
-                                                </button>
-                                            </td>
+                                            <SpellInput spell={{
+                                                            docID: spell.id,
+                                                            data: spell,
+                                                            idlog: props.model.id,
+                                                            brand: props.model.brand
+                                                        }} />
                                         </tr>
                                     ))}
                                 </tbody>
@@ -126,3 +119,4 @@ export default withFirebaseAuth({
     providers,
     firebaseAppAuth,
 })(Suggessions);
+

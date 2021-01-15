@@ -20,6 +20,7 @@ import firebase from 'firebase/app'
 import firebaseApp from '../../firebaseauth';
 
 
+
 const firebaseAppAuth = firebaseApp.auth(); const providers = {
     googleProvider: new firebase.auth.GoogleAuthProvider(),
 };
@@ -39,12 +40,21 @@ class Login extends Component {
                 <div className="main-panel">
                     <Navbar />
                     <div className="content">
+                    {
+                    user
+                        ? <input type="hidden" id="UID" value={user.uid}></input>
+                        : <input type="hidden"></input>
+                }
                         <div className="container-fluid">
                             <Row1 id={this.props.location.state.id} />
                             <Row2 id={this.props.location.state.id} />
                             <div className="row">
-                            <Suggessions model={this.props.location.state.model} />
-                                
+                                <Suggessions model={{
+                                    brand: this.props.location.state.model,
+                                    id: this.props.location.state.idlog
+                                }} />
+                                {/* <Suggessions model={this.props.location.state.model} /> */}
+
                                 <div className="col-lg-6 col-md-12">
                                     <div className="card">
                                         <div className="card-header card-header-warning">

@@ -28,7 +28,7 @@ const firebaseAppAuth = firebaseApp.auth(); const providers = {
 
 function CarMenu(para) {
 
-    console.log("yadcjbsduycjdsbcid ",para);
+    //console.log("yadcjbsduycjdsbcid ",para);
 
 
 
@@ -41,6 +41,7 @@ function CarMenu(para) {
             const db = firebase.firestore(firebaseApp)
             const data = await db.collection("users").doc(para.location.state.idlog).collection('Vehicles').get()
             setSpells(data.docs.map(doc => ({...doc.data(), id: doc.id})))
+           
 
         }
 
@@ -65,7 +66,8 @@ function CarMenu(para) {
                         pathname: '/dashboad',
                         state: {
                           id: spell.id,
-                          model: spell.car
+                          model: spell.car,
+                          idlog: para.location.state.idlog
                         }
                       }}><form><input type="hidden" name="ChoosedCar" value={sid = spell.id} /><input type="submit" class="btnsubmit" value={spell.car} /></form></Link>
                     ))}
@@ -73,7 +75,8 @@ function CarMenu(para) {
                 <Link  to={{
                         pathname: '/creg',
                         state: {
-                          id: sid
+                          id: sid,
+                          idlog: para.location.state.idlog
                         }
                       }}><input type="button" value="Add New" /></Link>
                       
