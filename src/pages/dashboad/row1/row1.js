@@ -63,6 +63,15 @@ class Newsletter extends Component {
             //var j = parseInt(LastMilage);
 
             document.getElementById("next").innerHTML = LastMilage+5000 +"<small>KM</small>";
+            console.log("Doc view : ",doc.data());
+            
+
+
+            //db.collection("users").doc(UID).collection("test").add(doc.data());
+
+
+
+
         });
         
         return (

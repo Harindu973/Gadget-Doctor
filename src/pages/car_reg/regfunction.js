@@ -22,6 +22,8 @@ class reg extends Component {
         this.handleClick = this.handleClick.bind(this);
 
     }
+
+
     handleClick() {
 
 
@@ -39,6 +41,45 @@ class reg extends Component {
        
        
         console.log("dvdvdvv",this.props.id);
+        console.log("car Brand: ",carModel);
+        console.log("car ID: ",this.props.id);
+
+        
+
+
+
+    //Getting suggestions for user
+
+
+
+        const fetchData = async () => {
+            const db = firebase.firestore(firebaseApp)
+            const data = await db.collection("vehicles").doc("Suggessions").collection(carModel).get()
+
+            //setSpells(data.docs.map(doc => ({ ...doc.data(), id: doc.id })))
+            //console.log("This thi is",data.docs.map(doc => ({ ...doc.data(), id: doc.id })));
+
+
+
+
+           var temgh = data.docs.map(doc => (doc.data()));
+           console.log("Variable : ",temgh);
+
+           var desc = temgh.values();
+           console.log("Variable : ",desc);
+           for (let elements of desc) { 
+            db.collection("history").doc(UID).collection(carModel).add(
+                
+                    elements
+                
+            )
+           }
+        }
+        fetchData()
+    
+
+
+
        
 
 
@@ -77,9 +118,6 @@ class reg extends Component {
             // Do nothing!
             console.log('Thing was not saved to the database.');
         }
-
-
-
     }
 
 

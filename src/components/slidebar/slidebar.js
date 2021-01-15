@@ -52,11 +52,10 @@ class Slidebar extends Component {
                         <li className="nav-item ">
                             <a className="nav-link" href="./user.html">
                                 <i className="material-icons">person</i>
-                                <p>                        {
-                            user
-                                ? <p id="text">{user.uid}</p>
-                                : <p id="text">Your Profile</p>
-                        }</p>
+                                <p>
+
+                                    <p id="text">Your Profile</p>
+                                </p>
                             </a>
                         </li>
                         <li className="nav-item ">
@@ -96,17 +95,17 @@ class Slidebar extends Component {
                             </a>
                         </li>
                         <Link to="/">
-                        <li className="nav-item active-pro ">   
-                            <a className="nav-link">
-                                <i className="material-icons">assignment_return</i>
-                                {
-                                user
-                                    ? <button onClick={signOut}><p>Sign out</p></button>
-                                    : <button onClick={signInWithGoogle}><p>With Google</p></button>
+                            <li className="nav-item active-pro ">
+                                <a className="nav-link">
+                                    <i className="material-icons">assignment_return</i>
+                                    {
+                                        user
+                                            ? <button onClick={signOut}><p>Sign out</p></button>
+                                            : <button onClick={signInWithGoogle}><p>With Google</p></button>
 
-                            }                      
-                            </a>
-                        </li>
+                                    }
+                                </a>
+                            </li>
                         </Link>
                     </ul>
                 </div>
