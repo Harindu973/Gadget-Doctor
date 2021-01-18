@@ -30,6 +30,15 @@ const firebaseAppAuth = firebaseApp.auth(); const providers = {
 
 
 class Newsletter extends Component {
+    
+sendData = () => {
+    this.props.parentCallback("Hey Popsie, How’s it going?");
+}
+
+
+
+
+
     render() {
 
         console.log(this.props.id);
@@ -60,10 +69,12 @@ class Newsletter extends Component {
             document.getElementById("p1").innerHTML = mileage+"<small>KM</small>";
             document.getElementById("p2").innerHTML = " Last Synced on: "+date;
             document.getElementById("p3").innerHTML = " Or Before: "+nextService;
-            //var j = parseInt(LastMilage);
+            //var j = parseInt(LastMilage);cmileage
+
+            document.getElementById("cmileage").value = mileage;
 
             document.getElementById("next").innerHTML = LastMilage+5000 +"<small>KM</small>";
-            console.log("Doc view : ",doc.data());
+            console.log("Doc view : ",mileage);
             
 
 
@@ -82,6 +93,7 @@ class Newsletter extends Component {
                             <div className="card-icon">
                                 <i className="material-icons">drive_eta</i>
                             </div>
+                            <input type="text" id="cmileage" value="25" />
                             <p className="card-category">Mileage</p>
                             <h3 className="card-title"><h3 id="p1" className="card-title">Loading
                             </h3></h3>

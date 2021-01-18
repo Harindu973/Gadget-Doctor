@@ -24,21 +24,33 @@ const firebaseAppAuth = firebaseApp.auth(); const providers = {
     googleProvider: new firebase.auth.GoogleAuthProvider(),
 };
 
+const db = firebase.firestore(firebaseApp);
+var Mileage;
+
 
 function Suggessions(props) {
 
+    function refresh()
+    { 
+        window.location.reload();
+    }
+
     console.log("Para is ", props.model);
 
-    //para.location.state.model
+
+
 
 
     const [spells, setSpells] = React.useState([])
 
     React.useEffect(() => {
-
+        setTimeout(function () {  
         const fetchData = async () => {
-            const db = firebase.firestore(firebaseApp)
-            const data = await db.collection("history").doc(props.model.id).collection(props.model.brand).get()
+            console.log("Milage is 2 ",props.model.mileage);
+            
+            Mileage = parseInt(document.getElementById("cmileage").value);
+            console.log("Milage is from element ",Mileage);
+            const data = await db.collection("history").doc(props.model.id).collection(props.model.brand).where('key', '<=', Mileage).get()
             setSpells(data.docs.map(doc => ({ ...doc.data(), id: doc.id })))
 
 
@@ -48,7 +60,7 @@ function Suggessions(props) {
 
         }
 
-        fetchData()
+        fetchData()}, 4000);
     }, [])
 
     return (
@@ -60,8 +72,8 @@ function Suggessions(props) {
                             <span className="nav-tabs-title">Tasks:</span>
                             <ul className="nav nav-tabs" data-tabs="tabs">
                                 <li className="nav-item">
-                                    <a className="nav-link active" href="#profile" data-toggle="tab">
-                                        <i className="material-icons">bug_report</i> Bugs
+                                    <a className="nav-link active" data-toggle="tab" onClick={refresh}>
+                                        <i className="material-icons">bug_report</i> Save
                                   <div className="ripple-container" />
                                     </a>
                                 </li>
