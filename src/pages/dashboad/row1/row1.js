@@ -20,19 +20,20 @@ const firebaseAppAuth = firebaseApp.auth(); const providers = {
 };
 
 
-// db.collection('users').doc('APguG6g0IlZvVYuh08poBfZcxh02').collection('mileage').doc('current')
-//     .onSnapshot(function(doc) {
-//         CurrentMileage = doc.get('mileage');
-//         console.log(CurrentMileage);
-//     });
+
 
 
 
 
 class Newsletter extends Component {
+    
+
+
+
+
+
     render() {
 
-        console.log(this.props.id);
 
         const {
             user,
@@ -54,16 +55,15 @@ class Newsletter extends Component {
             mileage = doc.get('mileage');
             date = doc.get('lastSynced');
             nextService = doc.get('LastServiceDate');
-            console.log(mileage);
-            console.log(date);
             var icon = "material-icons";
             document.getElementById("p1").innerHTML = mileage+"<small>KM</small>";
             document.getElementById("p2").innerHTML = " Last Synced on: "+date;
             document.getElementById("p3").innerHTML = " Or Before: "+nextService;
-            //var j = parseInt(LastMilage);
+            //var j = parseInt(LastMilage);cmileage
+
+            document.getElementById("cmileage").value = mileage;
 
             document.getElementById("next").innerHTML = LastMilage+5000 +"<small>KM</small>";
-            console.log("Doc view : ",doc.data());
             
 
 
@@ -76,13 +76,15 @@ class Newsletter extends Component {
         
         return (
             <div className="row">
+                <input type="hidden" id="cmileage" value="5000" />
                 <div className="col-lg-3 col-md-6 col-sm-6">
                     <div className="card card-stats">
                         <div className="card-header card-header-success card-header-icon">
                             <div className="card-icon">
                                 <i className="material-icons">drive_eta</i>
                             </div>
-                            <p className="card-category">Mileage</p>
+                            
+                            <p className="card-category"><b>Mileage</b></p>
                             <h3 className="card-title"><h3 id="p1" className="card-title">Loading
                             </h3></h3>
                         </div>
@@ -99,7 +101,7 @@ class Newsletter extends Component {
                             <div className="card-icon">
                                 <i className="material-icons">handyman</i>
                             </div>
-                            <p className="card-category">Next Service at</p>
+                            <p className="card-category"><b>Next Service</b></p>
                             <h3 className="card-title" id="next">Loading
                             </h3>
                         </div>
@@ -112,17 +114,17 @@ class Newsletter extends Component {
                 </div>
                 <div className="col-lg-3 col-md-6 col-sm-6">
                     <div className="card card-stats">
-                        <div className="card-header card-header-warning card-header-icon">
+                        <div className="card-header card-header-info card-header-icon">
                             <div className="card-icon">
-                                <i className="material-icons">info_outline</i>
+                                <i className="material-icons">check_circle_outline</i>
                             </div>
-                            <p className="card-category">Warnings</p>
-                            <h3 className="card-title">75</h3>
+                            <p className="card-category"><b>Completed</b></p>
+                            <h3 id="doneID" className="card-title">0</h3>
                         </div>
                         <div className="card-footer">
                             <div className="stats">
-                                <i className="material-icons">local_offer</i> Tracked from Github
-                        </div>
+                            <i className="material-icons text-danger">warning</i>Just Updated
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -130,15 +132,15 @@ class Newsletter extends Component {
                     <div className="card card-stats">
                         <div className="card-header card-header-danger card-header-icon">
                             <div className="card-icon">
-                                <i className="material-icons">report</i>
+                                <i className="material-icons">info_outline</i>
                             </div>
-                            <p className="card-category">Issues</p>
-                            <h3 className="card-title">+245</h3>
+                            <p className="card-category"><b>Warnings</b></p>
+                            <h3 id="warningsid" className="card-title">0</h3>
                         </div>
                         <div className="card-footer">
                             <div className="stats">
-                            <i className="material-icons text-danger">warning</i>Just Updated
-                            </div>
+                                <i className="material-icons">local_offer</i> Tracked from Github
+                        </div>
                         </div>
                     </div>
                 </div>

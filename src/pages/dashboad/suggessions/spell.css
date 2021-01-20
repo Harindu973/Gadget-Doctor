@@ -6,7 +6,25 @@
 
 }
 
+#hovButton:focus {
+    background-color: #4CAF50; /* Green */
+    color: #eee;
+
+}
+
+#hovButton:visited {
+    background-color: #4CAF50; /* Green */
+    color: #eee;
+
+}
+
 #hovButtonDel:hover {
+    background-color: #E94340; /* Green */
+    color: #eee;
+
+}
+
+#hovButtonDel:focus {
     background-color: #E94340; /* Green */
     color: #eee;
 
