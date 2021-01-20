@@ -10,8 +10,8 @@ class Navbar extends Component {
             <nav className="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
                 <div className="container-fluid">
                     <div className="navbar-wrapper">
-                    <Link to="/dashboad">
-                        <b><font color="#eee">Dashboard</font></b>
+                    <Link to="/">
+                        <b><font color="#eee">CAR MENU</font></b>
                     </Link>
                     </div>
                     <button className="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">

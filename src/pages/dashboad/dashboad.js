@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import Row1 from "./row1/row1";
 import Row2 from "./row2/row2";
 import Suggessions from "./suggessions/suggessions";
+import Issues from "./suggessions/warnings";
+import Completed from "./suggessions/done"
 import Slidebar from "../../components/slidebar/slidebar";
 import Navbar from "../../components/narbar/navbar";
 import Footer from "../../components/footer/footer";
@@ -42,17 +44,7 @@ class Login extends Component {
             signInWithGoogle,
         } = this.props;
 
-    //    // getting current Mileage.
-       
-    //     const db = firebase.firestore(firebaseApp);
-    //     db.collection('users').doc(this.props.location.state.idlog).collection('Vehicles').doc(this.props.location.state.id)
-    //         .onSnapshot(function (doc) {
-    //             mileage = parseInt(doc.get('mileage'));
-    //             console.log("Milage is 3 ", mileage);
 
-
-    //         });
-    //         console.log("Milage is 4 ", mileage);
 
         return (
             <div>
@@ -69,11 +61,18 @@ class Login extends Component {
                             <Row1 id={this.props.location.state.id} />
                             <Row2 id={this.props.location.state.id} />
                             <div className="row">
-                                
 
-                               
-                                {console.log("Mileage test 2 ",mileage)}
                                 <Suggessions model={{
+                                    brand: this.props.location.state.model,
+                                    id: this.props.location.state.idlog,
+                                    mileage: mileage
+                                }} />
+                                <Issues model={{
+                                    brand: this.props.location.state.model,
+                                    id: this.props.location.state.idlog,
+                                    mileage: mileage
+                                }} />
+                                <Completed model={{
                                     brand: this.props.location.state.model,
                                     id: this.props.location.state.idlog,
                                     mileage: mileage

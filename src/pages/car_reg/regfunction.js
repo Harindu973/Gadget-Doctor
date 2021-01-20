@@ -39,10 +39,7 @@ class reg extends Component {
         var vNumber = document.getElementById("vNumber").value;
         
        
-       
-        console.log("dvdvdvv",this.props.id);
-        console.log("car Brand: ",carModel);
-        console.log("car ID: ",this.props.id);
+
 
         
 

@@ -9,12 +9,10 @@ import withFirebaseAuth from 'react-with-firebase-auth';
 import 'firebase/auth';
 import firebase from 'firebase/app';
 import firebaseApp from '../../../firebaseauth';
-
 import SpellInput from './spellinput.js';
 
 
 import 'firebase/firestore';
-
 
 import "../../auth/login";
 import "./spell.css";
@@ -35,7 +33,7 @@ function Suggessions(props) {
         window.location.reload();
     }
 
-    console.log("Para is ", props.model);
+ 
 
 
 
@@ -46,15 +44,13 @@ function Suggessions(props) {
     React.useEffect(() => {
         setTimeout(function () {  
         const fetchData = async () => {
-            console.log("Milage is 2 ",props.model.mileage);
+         
             
             Mileage = parseInt(document.getElementById("cmileage").value);
             console.log("Milage is from element ",Mileage);
             const data = await db.collection("history").doc(props.model.id).collection(props.model.brand).where('key', '<=', Mileage).get()
             setSpells(data.docs.map(doc => ({ ...doc.data(), id: doc.id })))
 
-
-           
 
 
 
@@ -73,7 +69,7 @@ function Suggessions(props) {
                             <ul className="nav nav-tabs" data-tabs="tabs">
                                 <li className="nav-item">
                                     <a className="nav-link active" data-toggle="tab" onClick={refresh}>
-                                        <i className="material-icons">bug_report</i> Save
+                                        <i className="material-icons">refresh</i> Refresh
                                   <div className="ripple-container" />
                                     </a>
                                 </li>

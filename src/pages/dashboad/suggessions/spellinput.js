@@ -29,27 +29,6 @@ class reg extends Component {
 
     
 
-    // setDone = () => {
-    //     const db = firebase.firestore(firebaseApp)
-
-
-
-
-    //         db.collection("history").doc(this.props.spell.idlog).collection(this.props.spell.brand).doc(this.props.spell.docID).update(
-    //             {
-    //                 status: "Done"
-    //             }
-    //         )
-
-
-
-    // }
-
-
-
-
-
-
     render() {
         const {
             user,
@@ -58,7 +37,7 @@ class reg extends Component {
 
 
         //console.log(this.props.id);
-        console.log("Spell is :", this.props.spell);
+       
 
 
         const changeDone = () => {
