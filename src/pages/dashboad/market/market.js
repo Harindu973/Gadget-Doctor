@@ -4,37 +4,7 @@ import MarketRow from "./marketrows";
 
 class Market extends Component {
 
-    state = {
-        loading: true,
-        person: null
-    };
-
-    async componentDidMount() {
-
-
-
-
-
-        const url = "https://market.gadgetdoc.tech/wp-json/wp/v2/product";
-        const response = await fetch(url);
-        const data = await response.json();
-
-        this.setState({ person: data[2], loading: false });
-
-        console.log(data[0]);
-        console.log({ person: data[0], loading: false });
-
-        // var product;
-        // for (var i = 0; i < data.length; ++i) {
-
-
-
-        //   }
-
-    }
-
-
-
+ 
     render() {
 
         
@@ -51,7 +21,7 @@ class Market extends Component {
                                 <thead className="text-warning">
                                     <tr><th>ID</th>
                                         <th>Item</th>
-                                        <th>Description</th>
+                                        <th>Price</th>
                                         <th>Link</th>
                                     </tr>
                                 </thead>

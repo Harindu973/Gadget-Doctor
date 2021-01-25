@@ -15,28 +15,30 @@ class Market extends Component {
 
 
 
-        const url = "https://market.gadgetdoc.tech/wp-json/wp/v2/product";
+        const url = "https://market.gadgetdoc.tech/wp-json/wc/store/products";
         const response = await fetch(url);
         const data = await response.json();
+        //console.log(data[0]);
 
 
         var i;
         for (i = 0; i < 3; ++i) {
             this.setState({ person: data[i], loading: false });
-            document.getElementById("slug_" + i).innerHTML = this.state.person.slug;
-            document.getElementById("link_" + i).href = this.state.person.link;
-            document.getElementById("content_" + i).innerHTML = this.state.person.content.rendered;
             console.log({ person: data[0], loading: false });
+            document.getElementById("slug_" + i).innerHTML = this.state.person.name;
+            document.getElementById("link_" + i).href = this.state.person.permalink;
+            document.getElementById("content_" + i).innerHTML = this.state.person.prices.currency_code+": "+ (Math.round(this.state.person.prices.price) /100).toFixed(2) +" /=";
+            console.log({ person: data[i], loading: false });
 
         }
 
 
 
 
-        console.log({ person: data[0], loading: false });
+     
 
 
-        console.log(this.state.content);
+        
         //console.log(this.state);
 
     }
@@ -57,7 +59,7 @@ class Market extends Component {
                         <td id="id_0">1</td>
                         <td id="slug_0"></td>
                         <td id="content_0" class="rowline">Niger</td>
-                        <td ><a href="" id="link_0" target="_blank"><button type="button" rel="tooltip" title="Click to see more..." id="hovButton2" href="#" className="btn btn-primary btn-link btn-sm"  >more</button></a>
+                        <td ><a href="" id="link_0" ><button type="button" rel="tooltip" title="Click to see more..." id="hovButton2" href="#" className="btn btn-primary btn-link btn-sm"  >more</button></a>
                         </td>
                     </tr>
                     <tr>
