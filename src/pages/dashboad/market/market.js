@@ -13,8 +13,8 @@ class Market extends Component {
                 <div className="col-lg-6 col-md-12">
                     <div className="card">
                         <div className="card-header card-header-warning">
-                            <h4 className="card-title">Employees Stats</h4>
-                            <p className="card-category">New employees on 15th September, 2016</p>
+                            <h4 className="card-title">Gadget Marketplace</h4>
+                            <p className="card-category">Automobile Marketplace for Car Lovers</p>
                         </div>
                         <div className="card-body table-responsive">
                             <table className="table table-hover">
