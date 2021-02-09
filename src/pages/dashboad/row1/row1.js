@@ -20,11 +20,6 @@ const firebaseAppAuth = firebaseApp.auth(); const providers = {
 };
 
 
-
-
-
-
-
 class Newsletter extends Component {
     
 
