@@ -54,7 +54,7 @@ function Suggessions(props) {
 
         }
 
-        fetchData()}, 4000);
+        fetchData()}, 3000);
     }, [])
 
     return (

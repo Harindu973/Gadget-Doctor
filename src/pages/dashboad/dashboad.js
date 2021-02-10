@@ -76,7 +76,7 @@ class Login extends Component {
                                 }} />
                                 {/* <Suggessions model={this.props.location.state.model} /> */}
                                 
-                                
+                                <Market />
 
                             </div>
                         </div>
