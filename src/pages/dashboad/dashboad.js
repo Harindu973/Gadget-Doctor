@@ -33,10 +33,6 @@ var mileage=5000;
 
 class Login extends Component {
 
-
-    
-    
-
     render() {
 
         const {
