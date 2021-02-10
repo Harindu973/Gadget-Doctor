@@ -54,9 +54,10 @@ class Fooo extends Component {
       console.log('Thing was not saved to the database.');
     }
 
-
-
   }
+
+  
+
   render() {
     const {
         user,
