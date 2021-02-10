@@ -7,6 +7,7 @@ import ServiceUpdate from "./updateService";
 
 class Raw2 extends Component {
     render() {
+
         return (
             <div className="row">
                 <div className="col-md-4">

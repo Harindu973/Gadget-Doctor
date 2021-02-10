@@ -23,7 +23,7 @@ const firebaseAppAuth = firebaseApp.auth(); const providers = {
 };
 
 const db = firebase.firestore(firebaseApp);
-var Mileage;
+var Mileage = 15000;
 
 
 function Suggessions(props) {
@@ -33,11 +33,7 @@ function Suggessions(props) {
         window.location.reload();
     }
 
- 
-
-
-
-
+    
 
     const [spells, setSpells] = React.useState([])
 
@@ -48,8 +44,9 @@ function Suggessions(props) {
             
             Mileage = parseInt(document.getElementById("cmileage").value);
             var Mileage2 = Mileage + 5000;
-            console.log("Milage is from element ",Mileage2);
-            const data = await db.collection("history").doc(props.model.id).collection(props.model.brand).where(('mileage', '>=', 5000) && 'mileage', '<=', 10000).get()
+            console.log("Milage is from element 1 :",Mileage);
+            console.log("Milage is from element 2 :  ",Mileage2);
+            const data = await db.collection("history").doc(props.model.id).collection(props.model.brand).where('mileage', '>=', Mileage).where('mileage', '<=', Mileage2).get()
             setSpells(data.docs.map(doc => ({ ...doc.data(), id: doc.id })))
 
 
