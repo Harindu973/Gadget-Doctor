@@ -47,8 +47,9 @@ function Suggessions(props) {
          
             
             Mileage = parseInt(document.getElementById("cmileage").value);
-            console.log("Milage is from element ",Mileage);
-            const data = await db.collection("history").doc(props.model.id).collection(props.model.brand).where('key', '<=', Mileage).get()
+            var Mileage2 = Mileage + 5000;
+            console.log("Milage is from element ",Mileage2);
+            const data = await db.collection("history").doc(props.model.id).collection(props.model.brand).where(('mileage', '>=', 5000) && 'mileage', '<=', 10000).get()
             setSpells(data.docs.map(doc => ({ ...doc.data(), id: doc.id })))
 
 
