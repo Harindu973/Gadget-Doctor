@@ -58,7 +58,7 @@ function CarMenu(para) {
             
 
             <div className="btnbox">
-            <center><h1>Select Your Vehicle</h1></center><br /><br /><br />
+            <center><h1>Select Your Vehicle</h1><br /><br /><br />
                 
                     {spells.map(spell => (
 
@@ -69,8 +69,9 @@ function CarMenu(para) {
                           model: spell.car,
                           idlog: para.location.state.idlog
                         }
-                      }}><form><input type="hidden" name="ChoosedCar" value={sid = spell.id} /><input type="submit" class="btnsubmit" value={spell.car} /></form></Link>
+                      }}><form><input type="hidden" name="ChoosedCar" value={sid = spell.id} /><input type="submit" class="bubbly-button" value={spell.car} /></form></Link>
                     ))}
+                    </center>
 
                 <Link  to={{
                         pathname: '/creg',
@@ -78,10 +79,11 @@ function CarMenu(para) {
                           id: sid,
                           idlog: para.location.state.idlog
                         }
-                      }}><input type="button" value="Add New" /></Link>
+                      }}>
+                          <br /><br /><button className="btn btn-success" type="button" value="Add New" >Add New Vehicle</button></Link>
                       
                 
-            </div>
+                      </div>
         </div>
         </div>
     )
