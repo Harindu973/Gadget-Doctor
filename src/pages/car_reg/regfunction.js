@@ -65,7 +65,7 @@ class reg extends Component {
            var desc = temgh.values();
            console.log("Variable : ",desc);
            for (let elements of desc) { 
-            db.collection("history").doc(UID).collection(carModel).add(
+            db.collection("history").doc(UID).collection(vNumber).add(
                 
                     elements
                 

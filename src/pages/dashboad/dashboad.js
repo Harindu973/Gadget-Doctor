@@ -61,6 +61,7 @@ class Login extends Component {
 
                                 <Suggessions model={{
                                     brand: this.props.location.state.model,
+                                    vnumber: this.props.location.state.Vnumber,
                                     id: this.props.location.state.idlog,
                                     mileage: mileage
                                 }} />
