@@ -67,9 +67,10 @@ function CarMenu(para) {
                         state: {
                           id: spell.id,
                           model: spell.car,
+                          Vnumber: spell.Vehicle,
                           idlog: para.location.state.idlog
                         }
-                      }}><form><input type="hidden" name="ChoosedCar" value={sid = spell.id} /><input type="submit" class="bubbly-button" value={spell.car} /></form></Link>
+                      }}><form><input type="hidden" name="ChoosedCar" value={sid = spell.id} /><input type="submit" class="bubbly-button" value={spell.Brand +" "+ spell.car + ": " +spell.Vehicle  } /></form></Link>
                     ))}
                     </center>
 

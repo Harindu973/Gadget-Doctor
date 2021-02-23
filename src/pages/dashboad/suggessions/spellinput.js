@@ -46,7 +46,7 @@ class reg extends Component {
 
 
 
-            db.collection("history").doc(this.props.spell.idlog).collection(this.props.spell.brand).doc(this.props.spell.docID).update(
+            db.collection("history").doc(this.props.spell.idlog).collection(this.props.spell.vnumber).doc(this.props.spell.docID).update(
                 {
                     status: "check_circle_outline"
                 }
@@ -63,7 +63,7 @@ class reg extends Component {
 
 
 
-            db.collection("history").doc(this.props.spell.idlog).collection(this.props.spell.brand).doc(this.props.spell.docID).update(
+            db.collection("history").doc(this.props.spell.idlog).collection(this.props.spell.vnumber).doc(this.props.spell.docID).update(
                 {
                     status: "pending_actions"
                 }

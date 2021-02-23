@@ -40,13 +40,13 @@ function Suggessions(props) {
     React.useEffect(() => {
         setTimeout(function () {  
         const fetchData = async () => {
-         
+
             
             Mileage = parseInt(document.getElementById("cmileage").value);
             var Mileage2 = Mileage + 5000;
             console.log("Milage is from element 1 :",Mileage);
             console.log("Milage is from element 2 :  ",Mileage2);
-            const data = await db.collection("history").doc(props.model.id).collection(props.model.brand).where('mileage', '>=', Mileage).where('mileage', '<=', Mileage2).get()
+            const data = await db.collection("history").doc(props.model.id).collection(props.model.vnumber).where('mileage', '>=', Mileage).where('mileage', '<=', Mileage2).get()
             setSpells(data.docs.map(doc => ({ ...doc.data(), id: doc.id })))
 
 
@@ -77,12 +77,14 @@ function Suggessions(props) {
                                   <div className="ripple-container" />
                                     </a>
                                 </li>
+                                <Link to="/inner">
                                 <li className="nav-item">
                                     <a className="nav-link" href="#settings" data-toggle="tab">
                                         <i className="material-icons">cloud</i> Server
                                   <div className="ripple-container" />
                                     </a>
                                 </li>
+                                </Link>
                             </ul>
                         </div>
                     </div>
@@ -105,7 +107,8 @@ function Suggessions(props) {
                                                             docID: spell.id,
                                                             data: spell,
                                                             idlog: props.model.id,
-                                                            brand: props.model.brand
+                                                            brand: props.model.brand,
+                                                            vnumber: props.model.vnumber
                                                         }} />
                                         </tr>
                                     ))}
