@@ -1,8 +1,9 @@
 import React, { Component, state } from "react";
-import MarketRow from "./marketrows";
+import ExpertRow from "./expertrows";
 //import "./newsletter.css";
 
-class Market extends Component {
+class Expert extends Component {
+    
 
  
     render() {
@@ -12,22 +13,22 @@ class Market extends Component {
             <>
                 <div className="col-lg-6 col-md-12">
                     <div className="card">
-                        <div className="card-header card-header-warning">
-                            <h4 className="card-title">Gadget Market</h4>
-                            <p className="card-category">These are the recommondations for you from Gadget Market</p>
+                        <div className="card-header card-header-primary">
+                            <h4 className="card-title">Gadget Experts</h4>
+                            <p className="card-category">Theese are the expert's articles we are recommending for you.</p>
                         </div>
                         <div className="card-body table-responsive">
                             <table className="table table-hover">
-                                <thead className="text-warning">
-                                    <tr><th>ID</th>
-                                        <th>Item</th>
-                                        <th>Price</th>
+                                <thead className="text-primary">
+                                    <tr>
+                                        <th>Author</th>
+                                        <th>Post</th>
                                         <th>Link</th>
                                     </tr>
                                 </thead>
                                 <tbody>
 
-                                    <MarketRow />
+                                    <ExpertRow />
                                    
 
                                 </tbody>
@@ -43,4 +44,4 @@ class Market extends Component {
 
     }
 }
-export default Market;
+export default Expert;
