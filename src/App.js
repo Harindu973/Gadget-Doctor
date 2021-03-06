@@ -36,7 +36,7 @@ function App() {
 
         <Route exact path='/' component={Login} />
         <Route exact path='/creg' component={Creg} />
-        <Route exact path='/inner' component={Inner} />
+        <Route exact path='/details' component={Inner} />
         
         <Route path="/carmenu" render={(props) => <CarMenu {...props}/>}/>
         <Route path="/dashboad" render={(props) => <Dashboad {...props}/>}/>
