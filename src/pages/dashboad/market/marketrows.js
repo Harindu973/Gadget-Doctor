@@ -22,14 +22,13 @@ class Market extends Component {
 
 
         var i;
-        for (i = 0; i < 3; ++i) {
+        for (i = 0; i < 5; ++i) {
             this.setState({ person: data[i], loading: false });
             //console.log({ person: data[0], loading: false });
             document.getElementById("slug_" + i).innerHTML = this.state.person.name;
             document.getElementById("link_" + i).href = this.state.person.permalink;
             document.getElementById("content_" + i).innerHTML = this.state.person.prices.currency_code+": "+ (Math.round(this.state.person.prices.price) /100).toFixed(2) +" /=";
            // console.log({ person: data[i], loading: false });
-
         }
 
 
