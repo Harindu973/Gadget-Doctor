@@ -75,6 +75,20 @@ class Market extends Component {
                         <td ><a href="" id="link_2" target="_blank"><button type="button" rel="tooltip" title="Click to see more..." id="hovButton2" href="#" className="btn btn-primary btn-link btn-sm"  >details</button></a>
                         </td>
                     </tr>
+                    <tr>
+                        <td id="id_3">4</td>
+                        <td id="slug_3"></td>
+                        <td id="content_3" class="rowline">Niger</td>
+                        <td ><a href="" id="link_3" target="_blank"><button type="button" rel="tooltip" title="Click to see more..." id="hovButton2" href="#" className="btn btn-primary btn-link btn-sm"  >details</button></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="id_4">5</td>
+                        <td id="slug_4"></td>
+                        <td id="content_4" class="rowline">Niger</td>
+                        <td ><a href="" id="link_4" target="_blank"><button type="button" rel="tooltip" title="Click to see more..." id="hovButton2" href="#" className="btn btn-primary btn-link btn-sm"  >details</button></a>
+                        </td>
+                    </tr>
                 </>
                     )
                 }
