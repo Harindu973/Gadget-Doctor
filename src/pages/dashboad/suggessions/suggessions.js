@@ -2,7 +2,7 @@ import React from 'react';
 import {
     Link
 } from 'react-router-dom';
-//import "./carMenu.css";
+import "./suggessions.css";
 
 
 import withFirebaseAuth from 'react-with-firebase-auth';
@@ -101,8 +101,16 @@ function Suggessions(props) {
                                             <td>
                                                 <i className="material-icons">{spell.status}</i>
                                             </td>
-                                            <td><b>{spell.service}</b></td>
-                                            <td>{spell.serviceDesc}</td>
+                                            <td><Link id="graytext" to={{ 
+                                                pathname: "/details",
+                                                title: spell.service,
+                                                desc: spell.serviceDesc
+                                                }}><div  title="click here to see more details.">{spell.service}</div></Link></td>
+                                            <td><Link id="graytext" to={{ 
+                                                pathname: "/details", 
+                                                title: spell.service,
+                                                desc: spell.serviceDesc
+                                                }}><div title="click here to see more details.">{spell.serviceDesc}</div></Link></td>
                                             <SpellInput spell={{
                                                             docID: spell.id,
                                                             data: spell,

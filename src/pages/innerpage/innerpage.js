@@ -30,7 +30,13 @@ const firebaseAppAuth = firebaseApp.auth(); const providers = {
 
 
 class Inner extends Component {
+
+
+
+  
   render() {
+
+
     const { user, signOut, signInWithGoogle } = this.props;
     return (
       <div>
@@ -49,17 +55,17 @@ class Inner extends Component {
                 <div className="card-icon">
                   <i className="material-icons">info_outline</i>
                 </div>
-                <p className="card-category">
-                  <b>Warnings</b>
-                </p>
                 <h3 id="warningsid" className="card-title">
-                  0
+                  {this.props.location.title}
                 </h3>
+                <p className="card-category">
+                  <b>{this.props.location.desc}</b>
+                </p>
+                {console.log(this.props.location)}
               </div>
               <div className="card-footer">
                 <div className="stats">
-                  <i className="material-icons">local_offer</i> Tracked from
-                  Github
+                  <i className="material-icons">local_offer</i> Tracked by Gadget Doctor
                 </div>
               </div>
             </div>

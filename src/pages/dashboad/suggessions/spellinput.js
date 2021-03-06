@@ -74,7 +74,10 @@ class reg extends Component {
         }
 
         function timeFunction() {
+
+            if (window.confirm("Do you want to change status?")) {
             setTimeout(function () { window.location.reload(); }, 500);
+            }
         }
 
 

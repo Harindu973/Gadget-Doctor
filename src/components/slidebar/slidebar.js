@@ -51,49 +51,38 @@ class Slidebar extends Component {
                         </Link>
                         <li className="nav-item ">
                             <a className="nav-link" href="./user.html">
-                                <i className="material-icons">person</i>
+                                <i className="material-icons">add_business</i>
                                 <p>
 
-                                    <p id="text">Your Profile</p>
+                                    <p id="text">Gadget Marketplace</p>
                                 </p>
                             </a>
                         </li>
                         <li className="nav-item ">
                             <a className="nav-link" href="./tables.html">
-                                <i className="material-icons">content_paste</i>
-                                <p>Table List</p>
+                                <i className="material-icons">groups</i>
+                                <p>Gadget Community</p>
                             </a>
                         </li>
                         <li className="nav-item ">
                             <a className="nav-link" href="./typography.html">
-                                <i className="material-icons">library_books</i>
-                                <p>Typography</p>
+                                <i className="material-icons">admin_panel_settings</i>
+                                <p>Gadget Expert</p>
                             </a>
                         </li>
                         <li className="nav-item ">
                             <a className="nav-link" href="./icons.html">
-                                <i className="material-icons">bubble_chart</i>
-                                <p>Icons</p>
+                                <i className="material-icons">android</i>
+                                <p>Gadget Android</p>
                             </a>
                         </li>
                         <li className="nav-item ">
                             <a className="nav-link" href="./map.html">
-                                <i className="material-icons">location_ons</i>
-                                <p>Maps</p>
+                                <i className="material-icons">phone_iphone</i>
+                                <p>Gadget IOS</p>
                             </a>
                         </li>
-                        <li className="nav-item ">
-                            <a className="nav-link" href="./notifications.html">
-                                <i className="material-icons">notifications</i>
-                                <p>Notifications</p>
-                            </a>
-                        </li>
-                        <li className="nav-item ">
-                            <a className="nav-link" href="./rtl.html">
-                                <i className="material-icons">language</i>
-                                <p>RTL Support</p>
-                            </a>
-                        </li>
+
                         <Link to="/">
                             <li className="nav-item active-pro ">
                                 <a className="nav-link">
