@@ -112,7 +112,7 @@ class Newsletter extends Component {
                                 <i className="material-icons">check_circle_outline</i>
                             </div>
                             <p className="card-category"><b>Completed</b></p>
-                            <h3 id="doneID" className="card-title">0</h3>
+                            <h3 id="doneID" className="card-title">Loading</h3>
                         </div>
                         <div className="card-footer">
                             <div className="stats">
@@ -128,7 +128,7 @@ class Newsletter extends Component {
                                 <i className="material-icons">info_outline</i>
                             </div>
                             <p className="card-category"><b>Warnings</b></p>
-                            <h3 id="warningsid" className="card-title">0</h3>
+                            <h3 id="warningsid" className="card-title">Loading</h3>
                         </div>
                         <div className="card-footer">
                             <div className="stats">

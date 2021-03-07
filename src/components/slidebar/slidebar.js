@@ -50,7 +50,7 @@ class Slidebar extends Component {
                             </li>
                         </Link>
                         <li className="nav-item ">
-                            <a className="nav-link" href="./user.html">
+                            <a className="nav-link" href="https://market.gadgetdoc.tech/" target="_blank">
                                 <i className="material-icons">add_business</i>
                                 <p>
 
@@ -59,13 +59,13 @@ class Slidebar extends Component {
                             </a>
                         </li>
                         <li className="nav-item ">
-                            <a className="nav-link" href="./tables.html">
+                            <a className="nav-link" href="https://forum.gadgetdoc.tech/" target="_blank">
                                 <i className="material-icons">groups</i>
                                 <p>Gadget Community</p>
                             </a>
                         </li>
                         <li className="nav-item ">
-                            <a className="nav-link" href="./typography.html">
+                            <a className="nav-link" href="https://expert.gadgetdoc.tech/" target="_blank">
                                 <i className="material-icons">admin_panel_settings</i>
                                 <p>Gadget Expert</p>
                             </a>
