@@ -40,45 +40,47 @@ class reg extends Component {
        
 
 
-        const changeDone = () => {
-            const db = firebase.firestore(firebaseApp)
+         const changeDone = async () => {
+            const db = firebase.firestore(firebaseApp);
 
 
 
 
-            db.collection("history").doc(this.props.spell.idlog).collection(this.props.spell.vnumber).doc(this.props.spell.docID).update(
+            await db.collection("history").doc(this.props.spell.idlog).collection(this.props.spell.vnumber).doc(this.props.spell.docID).update(
                 {
                     status: "check_circle_outline"
                 }
 
             )
 
-            timeFunction();
+           // timeFunction();
+           window.location.reload();
             
         }
 
-        const changePending = () => {
+         const changePending = async () => {
             const db = firebase.firestore(firebaseApp)
 
 
 
 
-            db.collection("history").doc(this.props.spell.idlog).collection(this.props.spell.vnumber).doc(this.props.spell.docID).update(
+            await db.collection("history").doc(this.props.spell.idlog).collection(this.props.spell.vnumber).doc(this.props.spell.docID).update(
                 {
                     status: "pending_actions"
                 }
             )
 
-            timeFunction();
+            //timeFunction();
+            window.location.reload();
             
         }
 
-        function timeFunction() {
+        // function timeFunction() {
 
-            if (window.confirm("Do you want to change status?")) {
-            setTimeout(function () { window.location.reload(); }, 500);
-            }
-        }
+        //     if (window.confirm("Do you want to change status?")) {
+        //     setTimeout(function () { window.location.reload(); }, 500);
+        //     }
+        // }
 
 
 

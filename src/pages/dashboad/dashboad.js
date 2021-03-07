@@ -56,7 +56,13 @@ class Login extends Component {
                         }
                         <div className="container-fluid">
                             <Row1 id={this.props.location.state.id} />
-                            <Row2 id={this.props.location.state.id} />
+                            <Row2 model={{
+                                    model: this.props.location.state.model,
+                                    brand: this.props.location.state.brand,
+                                    vnumber: this.props.location.state.Vnumber,
+                                    id: this.props.location.state.id,
+                                    mileage: mileage
+                                }} />
                             <div className="row">
 
                                 <Suggessions model={{
@@ -66,12 +72,12 @@ class Login extends Component {
                                     mileage: mileage
                                 }} />
                                 <Issues model={{
-                                    brand: this.props.location.state.model,
+                                    vnumber: this.props.location.state.Vnumber,
                                     id: this.props.location.state.idlog,
                                     mileage: mileage
                                 }} />
                                 <Completed model={{
-                                    brand: this.props.location.state.model,
+                                    vnumber: this.props.location.state.Vnumber,
                                     id: this.props.location.state.idlog,
                                     mileage: mileage
                                 }} />

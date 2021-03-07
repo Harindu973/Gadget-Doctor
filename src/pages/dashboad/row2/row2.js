@@ -23,7 +23,7 @@ class Raw2 extends Component {
                         </div>
                         <div className="">
                             <div className="stats">
-                                <Update id={this.props.id} />
+                                <Update id={this.props.model.id} />
                             </div>
                         </div>
                     </div>
@@ -41,7 +41,7 @@ class Raw2 extends Component {
                         </div>
                         <div className="">
                             <div className="stats">
-                                <ServiceUpdate id={this.props.id} />
+                                <ServiceUpdate id={this.props.model.id} />
                             </div>
                         </div>
                     </div>
@@ -52,8 +52,8 @@ class Raw2 extends Component {
                             <div className="ct-chart" id="completedTasksChart" />
                         </div>
                         <div className="card-body">
-                            <h4 className="card-title">Completed Tasks</h4>
-                            <p className="card-category">Last Campaign Performance</p>
+                            <h4 className="card-title"><b>Your Vehicle Info</b></h4>
+                            <p className="card-category">{this.props.model.model} | {this.props.model.vnumber}</p>
                         </div>
                         <div className="card-footer">
                             <div className="stats">
