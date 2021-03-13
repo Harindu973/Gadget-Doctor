@@ -3,6 +3,7 @@ import {
     Link
 } from 'react-router-dom';
 import "./suggessions.css";
+import Cookies from 'universal-cookie';
 
 
 import withFirebaseAuth from 'react-with-firebase-auth';
@@ -33,7 +34,9 @@ function Suggessions(props) {
         window.location.reload();
     }
 
-    
+    const cookies = new Cookies();
+
+    //cookies.set('mypet', 'xxxxx', { path: '/details' });
 
     const [spells, setSpells] = React.useState([])
 
@@ -77,7 +80,7 @@ function Suggessions(props) {
                                   <div className="ripple-container" />
                                     </a>
                                 </li>
-                                <Link to="/inner">
+                                <Link to="/details">
                                 <li className="nav-item">
                                     <a className="nav-link" href="#settings" data-toggle="tab">
                                         <i className="material-icons">cloud</i> Server
@@ -101,7 +104,8 @@ function Suggessions(props) {
                                             <td>
                                                 <i className="material-icons">{spell.status}</i>
                                             </td>
-                                            <td><Link id="graytext" to={{ 
+                                            <td>
+                                                <Link id="graytext" to={{ 
                                                 pathname: "/details",
                                                 title: spell.service,
                                                 desc: spell.serviceDesc

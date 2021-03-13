@@ -3,6 +3,7 @@ import Navlog from "../../components/narbarlog/navbarlog";
 import CarMen from '../carMenu/carMenu';
 import Onclickcomp from "../../pages/auth/cmponclick";
 import Slidebar from "../../components/slidebar/slidebar";
+import Cookies from 'js-cookie';
 
 import {
     Link
@@ -27,17 +28,42 @@ const firebaseAppAuth = firebaseApp.auth(); const providers = {
     googleProvider: new firebase.auth.GoogleAuthProvider(),
 };
 
-
+const cookies = new Cookies();
 
 class Inner extends Component {
-
 
 
   
   render() {
 
-
     const { user, signOut, signInWithGoogle } = this.props;
+
+
+    if(this.props.location.desc != undefined){
+      Cookies.set('cTitle', this.props.location.title, { path: '/details' });
+      Cookies.set('cDesc', this.props.location.desc, { path: '/details' });
+    }
+
+    // setTimeout(function () {Cookies.set('mypet', this.props.location.desc, { path: '/details' }); }, 0);
+    // console.log("Test prop "+this.props.location.desc)
+        
+
+
+    // setTimeout(function() {
+
+    //   this.state = {
+    //     Ctitle: Cookies.get('mypet')
+    //  }
+  
+    //  Cookies.set('mypet', this.props.location.title, { path: '/details' });
+  
+    //  console.log("cookie from :"+Cookies.get('mypet2'));
+
+    // }, 5000);
+
+ 
+
+    
     return (
       <div>
         <Slidebar />
@@ -56,12 +82,25 @@ class Inner extends Component {
                   <i className="material-icons">info_outline</i>
                 </div>
                 <h3 id="warningsid" className="card-title">
-                  {this.props.location.title}
+                
+                  {
+                                this.props.location.title
+                                    ? <b>{this.props.location.title}</b>
+                                    : <b>{Cookies.get('cTitle')}</b>
+
+                            }
                 </h3>
                 <p className="card-category">
-                  <b>{this.props.location.desc}</b>
+                  <b>
+                  {
+                                this.props.location.desc
+                                    ? this.props.location.desc
+                                    : Cookies.get('cDesc')
+
+                            }
+                  </b>
                 </p>
-                {console.log(this.props.location)}
+                
               </div>
               <div className="card-footer">
                 <div className="stats">

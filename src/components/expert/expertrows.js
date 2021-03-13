@@ -18,7 +18,7 @@ class Expert extends Component {
         const url = "https://expert.gadgetdoc.tech/ghost/api/v3/content/posts/?key=393518c903a40dad5503c49e49&include=authors,tags";
         const response = await fetch(url);
         const data = await response.json();
-        //console.log(data[0]);
+        console.log(data[0]);
 
 
         var c;

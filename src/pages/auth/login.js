@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component , useState } from "react";
 import Navlog from "../../components/narbarlog/navbarlog";
 import CarMen from '../carMenu/carMenu';
 import Onclickcomp from "../../pages/auth/cmponclick";
@@ -26,26 +26,54 @@ const firebaseAppAuth = firebaseApp.auth(); const providers = {
 
 
 
-// var email; //document.getElementById("useremail").value;
-// var pw;//document.getElementById("userpw").value;
-
-// firebase.auth().signInWithEmailAndPassword("harindulakshanob@gmail.com","H12345").then(function(firebaseUser) {
-//     window.confirm("xxxxxxxxxxxxxxxxxxxxxxxxxx<br>xxxxxxxxxxxxxxxxxxxxxxxxx<br>xxxxxxxxxxxxxxxxxxxxxxxxx<br>etext"+email+pw);
-
-// })
-// .catch(function(error) {
-//     // Handle Errors here.
-  
-//     window.confirm("sorry"+email+pw +error);
-//     var errorCode = error.code;
-//     var errorMessage = error.message;
-//     // ...
-//   });
-
-
-
-
 class Login extends Component {
+
+    // constructor(props) {
+    //     super(props);
+    //     this.state = {
+    //       email: "",
+    //       pw:""
+    //     };
+    // }
+
+    
+    // setEmail = () => {
+    //     this.setState({
+    //         email: document.getElementById("useremail").value,
+    //     })
+    //     console.log(this.state.email+this.state.pw);
+    //     return this.state.email;
+    //   }
+
+    // setPw = () => {
+    //     this.setState({
+    //         pw: document.getElementById("userpw").value,
+    //     })
+    //     console.log(this.state.email+this.state.pw);
+    //     return this.state.pw;
+    //   }
+
+async flogin(){
+    
+    //var email = "harindu973@gmail.com";//document.getElementById("useremail").value;
+    //var pw = "H123456";// document.getElementById("userpw").value;
+    console.log("loging  sjd  "+this.state.email+this.state.pw);
+    window.confirm("zzzzzzzzzzzzzzzzzzzzzzzzz<br>etext"+this.state.email+this.state.pw);
+    await firebase.auth().signInWithEmailAndPassword("harindu973@gmail.com","H123456").then(function(firebaseUser) {
+        window.confirm("xxxxxxxxxxxxxxxxxxxxxxxxx<br>etext"+this.state.email+this.state.pw);
+    
+    })
+    .catch(function(error) {
+        // Handle Errors here.
+      
+        window.confirm("sorry"+this.state.email+this.state.pw +error);
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        // ...
+      });
+    
+    }
+
     render() {
         const {
             user,
@@ -53,20 +81,17 @@ class Login extends Component {
             signInWithGoogle,
         } = this.props;
         return (
-
-
             <div>
                 <Navlog />
-                
                 <div className="login-box">
                     <h2>Login</h2>
-                    <form onsubmit="flogin()">
+                    <form method="GET">
                         <div className="user-box">
-                            <input type="text" id="useremail" required />
+                            <input type="text" id="useremail" required onChange={this.setEmail} />
                             <label>Username</label>
                         </div>
                         <div className="user-box">
-                            <input type="password" id="userpw" required />
+                            <input type="password" id="userpw" required onChange={this.setPw} />
                             <label>Password</label>
                         </div>
                         
@@ -90,7 +115,8 @@ class Login extends Component {
                             <span />
                             <span />
                             <span />
-                            <Onclickcomp />
+                            <button onClick={this.flogin}>Login</button>
+                            {/* <Onclickcomp /> */}
                     </a>
                     
                         <input type="submit" /> 
