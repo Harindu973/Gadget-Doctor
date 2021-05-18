@@ -1,13 +1,6 @@
-#hovButton2:hover {
-    background-color: #97a398; 
-    color: #eee;
-
-}
-
-#hovButton2 {
+#marketHead {
+    position: relative;
+    z-index:  2 !important;
     
-    background-color: #4CAF50; 
-    color: #eee;
 
 }
-

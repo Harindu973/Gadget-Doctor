@@ -16,6 +16,8 @@ import Creg from "./pages/car_reg/car_reg";
 import Footer from "./components/footer/footer";
 import CarMenu from "./pages/carMenu/carMenu";
 import Inner from "./pages/innerpage/innerpage";
+import IssueList from "./components/issuelist/issuelist";
+import Popup from "./components/popup/popup";
 
 import {
   BrowserRouter as Router,
@@ -37,6 +39,7 @@ function App() {
         <Route exact path='/' component={Login} />
         <Route exact path='/creg' component={Creg} />
         <Route exact path='/details' component={Inner} />
+        <Route exact path='/issuelist' component={Popup} />
         
         <Route path="/carmenu" render={(props) => <CarMenu {...props}/>}/>
         <Route path="/dashboad" render={(props) => <Dashboad {...props}/>}/>

@@ -1,0 +1,47 @@
+#blacktext{
+    color:rgb(7, 7, 7) !important;
+}
+
+#graytext{
+    color:rgb(66, 65, 65) !important;
+}
+
+.material-icons.orange600 { color: #553be7; }
+
+#hovButton:hover {
+    background-color: #4CAF50; /* Green */
+    color: #eee;
+
+}
+
+#hovButton:focus {
+    background-color: #4CAF50; /* Green */
+    color: #eee;
+
+}
+
+#hovButton:visited {
+    background-color: #4CAF50; /* Green */
+    color: #eee;
+
+}
+
+#hovButtonDel:hover {
+    background-color: #E94340; /* Green */
+    color: #eee;
+
+}
+
+#hovButtonDel:focus {
+    background-color: #E94340; /* Green */
+    color: #eee;
+
+}
+
+#hovButton:active {
+    background-color:#eee;
+}
+
+#hovButtonDel:active {
+    background-color:#eee;
+}

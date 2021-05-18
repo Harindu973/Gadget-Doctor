@@ -7,6 +7,7 @@ import Completed from "./suggessions/done"
 import Slidebar from "../../components/slidebar/slidebar";
 import Navbar from "../../components/narbar/navbar";
 import Footer from "../../components/footer/footer";
+import IssueList from '../../components/issuelist/issuelist'
 import Market from "./market/market";
 import {
     Link
@@ -21,6 +22,7 @@ import firebase from 'firebase/app'
 
 
 import firebaseApp from '../../firebaseauth';
+import issuelist from "../../components/issuelist/issuelist";
 
 
 

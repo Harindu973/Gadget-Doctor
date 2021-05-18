@@ -133,10 +133,10 @@ class Car_reg extends Component {
                                 <GetDate />
                             </div>
                         </div>
-                        <img src="" className="App-logo" alt="logo" />
+                       
                         {
                             user
-                                ? <p id="text">Hello, {user.uid}</p>
+                                ? <p id="text">Hello, {user.displayName}</p>
                                 : <p id="text">Please sign in.</p>
                         }
 
