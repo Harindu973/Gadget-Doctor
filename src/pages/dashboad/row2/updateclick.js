@@ -42,6 +42,7 @@ class Fooo extends Component {
         })
         .then(function () {
           console.log("Document successfully written!");
+          window.location.reload();
         })
         .catch(function (error) {
           console.error("Error writing document: ", error);

@@ -69,6 +69,7 @@ class Login extends Component {
                                     brand: this.props.location.state.model,
                                     vnumber: this.props.location.state.Vnumber,
                                     id: this.props.location.state.idlog,
+                                    vid: this.props.location.state.id,
                                     mileage: mileage
                                 }} />
                                 <Issues model={{

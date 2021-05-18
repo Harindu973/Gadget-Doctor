@@ -48,12 +48,13 @@ class Newsletter extends Component {
             date = doc.get('lastSynced');
             nextService = doc.get('LastServiceDate');
             //var icon = "material-icons";
+            document.getElementById("cmileage").value = mileage;
             document.getElementById("p1").innerHTML = mileage+"<small>KM</small>";
             document.getElementById("p2").innerHTML = " Last Synced on: "+date;
             document.getElementById("p3").innerHTML = " Or Before: "+nextService;
             //var j = parseInt(LastMilage);cmileage
 
-            document.getElementById("cmileage").value = mileage;
+           
 
             document.getElementById("next").innerHTML = LastMilage+5000 +"<small>KM</small>";
             
