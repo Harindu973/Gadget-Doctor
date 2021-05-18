@@ -43,7 +43,7 @@ function Suggessions(props) {
 
         }
 
-        fetchData()});
+        fetchData()},3000);
     }, [])
 
     return (

@@ -65,7 +65,7 @@ function Issuelist(props) {
                 <div className="card-header card-header-tabs card-header-primary">
                     <div className="nav-tabs-navigation">
                         <div className="nav-tabs-wrapper">
-                            <span className="nav-tabs-title">Tasks:</span>
+                            <span className="nav-tabs-title"></span>
                             <ul className="nav nav-tabs" data-tabs="tabs">
                                 <li className="nav-item">
                                     <a className="nav-link active" data-toggle="tab" onClick={refresh}>

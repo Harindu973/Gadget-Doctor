@@ -80,13 +80,13 @@ class Slidebar extends Component {
                             </a>
                         </li>
                         <li className="nav-item ">
-                            <a className="nav-link" href="./icons.html">
+                            <a className="nav-link" href="https://android.gadgetdoc.tech/" target="_blank">
                                 <i className="material-icons">android</i>
                                 <p>Gadget Android</p>
                             </a>
                         </li>
                         <li className="nav-item ">
-                            <a className="nav-link" href="./map.html">
+                            <a className="nav-link" href="https://www.apple.com/app-store/" target="_blank">
                                 <i className="material-icons">phone_iphone</i>
                                 <p>Gadget IOS</p>
                             </a>

@@ -65,12 +65,10 @@ class Inner extends Component {
 
     
     return (
-      <div>
-        <Slidebar />
-        <div className="main-panel">
-          <Navlog />
-          <br /> <br />
-          <br />
+     <>
+       
+        
+          <Navlog /><br /><br /><br />
           <div className="container-fluid">
           <div className="row">
           <div className="col-lg-3 col-md-6 col-sm-6">
@@ -115,10 +113,8 @@ class Inner extends Component {
             <div className="row">
               <Expert />
               <Market />
-            </div>
-          </div>
         </div>
-      </div>
+      </div></>
     );
   }
 }
