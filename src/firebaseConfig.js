@@ -1,6 +1,6 @@
 const firebaseConfig = {
     apiKey: "AIzaSyC503OQ0fBT-Ip9KF1KEOR3upmjRuQVz94",
-    authDomain: "gadjet-5c4a4.firebaseapp.com",
+    authDomain: "auth.gadgetdoc.tech",
     databaseURL: "https://gadjet-5c4a4.firebaseio.com",
     projectId: "gadjet-5c4a4",
     storageBucket: "gadjet-5c4a4.appspot.com",
