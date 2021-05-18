@@ -85,7 +85,7 @@ async flogin(){
                 <Navlog />
                 <div className="login-box">
                    <center><h4><font color="#eee">Use your Google account to</font></h4></center>
-                   <h2>Login and SignUp</h2>
+                   <h2>Login or SignUp</h2>
                     <form method="GET">
 
                         <center>
