@@ -35,60 +35,31 @@ class reg extends Component {
         } = this.props;
 
 
-
         //console.log(this.props.id);
-       
-
-
+        //Marking Buttons
          const changeDone = async () => {
             const db = firebase.firestore(firebaseApp);
-
-
-
-
             await db.collection("history").doc(this.props.spell.idlog).collection(this.props.spell.vnumber).doc(this.props.spell.docID).update(
                 {
                     status: "check_circle_outline"
                 }
 
             )
-
-           // timeFunction();
-           window.location.reload();
-            
+           window.location.reload();         
         }
 
          const changePending = async () => {
             const db = firebase.firestore(firebaseApp)
-
-
-
-
             await db.collection("history").doc(this.props.spell.idlog).collection(this.props.spell.vnumber).doc(this.props.spell.docID).update(
                 {
                     status: "pending_actions"
                 }
             )
-
             //timeFunction();
-            window.location.reload();
-            
+            window.location.reload();            
         }
-
-        // function timeFunction() {
-
-        //     if (window.confirm("Do you want to change status?")) {
-        //     setTimeout(function () { window.location.reload(); }, 500);
-        //     }
-        // }
-
-
-
-
         return (
-
             <>
-
                 <td className="td-actions text-right">
                     <a><button type="button" rel="tooltip" title="Set to Done" id="hovButton" href="#" className="btn btn-primary btn-link btn-sm" onClick={changeDone} >
                         <i className="material-icons">check</i>

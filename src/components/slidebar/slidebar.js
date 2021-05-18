@@ -2,7 +2,7 @@ import React, { Component } from "react";
 //import "./newsletter.css";
 
 import {
-    Link
+    Link,
 } from 'react-router-dom';
 
 
@@ -15,18 +15,27 @@ import firebase from 'firebase/app'
 
 
 import firebaseApp from '../../firebaseauth';
+import dashboad from "../../pages/dashboad/dashboad";
 
 const firebaseAppAuth = firebaseApp.auth(); const providers = {
     googleProvider: new firebase.auth.GoogleAuthProvider(),
 };
 
 class Slidebar extends Component {
+
+    pushDashboad(){
+        window.location.reload();
+    }
+
+
     render() {
         const {
             user,
             signOut,
             signInWithGoogle,
         } = this.props;
+
+
         return (
             <div className="sidebar" data-color="purple" data-background-color="white" data-image="../assets/img/sidebar-1.jpg">
                 {/*
@@ -39,10 +48,10 @@ class Slidebar extends Component {
                     </a></div>
                 <div className="sidebar-wrapper">
                     <ul className="nav">
-                        <Link to="/dashboad">
+                        <Link onClick={this.pushDashboad}>
                             <li className="nav-item active  ">
 
-                                <a className="nav-link" href="./dashboard.html">
+                                <a className="nav-link">
                                     <i className="material-icons">dashboard</i>
                                     <p>Dashboard</p>
                                 </a>

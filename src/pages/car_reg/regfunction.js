@@ -15,6 +15,7 @@ const firebaseAppAuth = firebaseApp.auth(); const providers = {
 };
 
 class reg extends Component {
+    
 
     
     constructor(props) {
@@ -24,11 +25,14 @@ class reg extends Component {
     }
 
 
-    handleClick() {
+    async handleClick() {
+      
 
 
-
-        var UID = document.getElementById("UID").value;
+        //console.log("Reg func ID passed "+this.props.location.state.idlog);
+        //var UID = this.props.location.state.idlog;
+        var UID = document.getElementById("UIDFA").value;
+        
         var Cmileage = document.getElementById("currentMileage").value;
         var carBrand = document.getElementById("carBrand").value;
         var carModel = document.getElementById("carModel").value;
@@ -41,13 +45,6 @@ class reg extends Component {
        
 
 
-        
-
-
-
-    //Getting suggestions for user
-
-
 
         const fetchData = async () => {
             const db = firebase.firestore(firebaseApp)
@@ -55,22 +52,23 @@ class reg extends Component {
 
             //setSpells(data.docs.map(doc => ({ ...doc.data(), id: doc.id })))
             //console.log("This thi is",data.docs.map(doc => ({ ...doc.data(), id: doc.id })));
-
+           // console.log("loaded from Vehicles!");
 
 
 
            var temgh = data.docs.map(doc => (doc.data()));
-           console.log("Variable : ",temgh);
+           //console.log("Loaded Suggesstions : ",temgh);
 
            var desc = temgh.values();
-           console.log("Variable : ",desc);
+          // console.log("Variable : ",desc);
            for (let elements of desc) { 
-            db.collection("history").doc(UID).collection(vNumber).add(
+            await db.collection("history").doc(UID).collection(vNumber).add(
                 
                     elements
                 
             )
            }
+           //console.log("Added to History!");
         }
         fetchData()
     
@@ -84,9 +82,9 @@ class reg extends Component {
         var datetime = new Date();
         var ts = datetime.toISOString().slice(0, 10);
 
-        if (window.confirm("Updating current milage as " + Cmileage + "km? " + UID)) {
+        if (window.confirm("May I add your Vehicle to your List?")) {
 
-            db.collection("users").doc(UID).collection("Vehicles").add({
+            await db.collection("users").doc(UID).collection("Vehicles").add({
                 car: carModel,
                 mileage: Cmileage,
                 datetime: ts,
@@ -102,9 +100,11 @@ class reg extends Component {
             })
                 .then(function () {
                     console.log("Document successfully written!");
+                    
                 })
                 .catch(function (error) {
                     console.error("Error writing document: ", error);
+                   
                 });
 
 
@@ -129,7 +129,7 @@ class reg extends Component {
             <div>
                 {
                     user
-                        ? <input type="hidden" id="UID" value={user.uid}></input>
+                        ? <input type="hidden" id="UIDFA" value={user.uid}></input>
                         : <input type="hidden"></input>
                 }
                 <button type="submit" onClick={this.handleClick}>Add My Car</button>

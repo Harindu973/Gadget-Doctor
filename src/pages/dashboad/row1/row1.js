@@ -9,16 +9,17 @@ import 'firebase/firestore';
 
 
 var db = firebase.firestore(firebaseApp);
-var LastMilage ='100';
-var mileage;
-var date;
-var nextService;
-var UID;
+
 
 const firebaseAppAuth = firebaseApp.auth(); const providers = {
   googleProvider: new firebase.auth.GoogleAuthProvider(),
 };
 
+var LastMilage ='100';
+var mileage;
+var date;
+var nextService;
+var UID;
 
 class Newsletter extends Component {
     
@@ -39,14 +40,14 @@ class Newsletter extends Component {
         }
 
 
-
+        //Getting Mileage and date
         db.collection('users').doc(UID).collection('Vehicles').doc(this.props.id)
         .onSnapshot(function(doc) {
             LastMilage = parseInt(doc.get('LastServiceMileage'));
             mileage = doc.get('mileage');
             date = doc.get('lastSynced');
             nextService = doc.get('LastServiceDate');
-            var icon = "material-icons";
+            //var icon = "material-icons";
             document.getElementById("p1").innerHTML = mileage+"<small>KM</small>";
             document.getElementById("p2").innerHTML = " Last Synced on: "+date;
             document.getElementById("p3").innerHTML = " Or Before: "+nextService;
@@ -56,15 +57,6 @@ class Newsletter extends Component {
 
             document.getElementById("next").innerHTML = LastMilage+5000 +"<small>KM</small>";
             
-
-
-            //db.collection("users").doc(UID).collection("test").add(doc.data());
-
-
-
-
-
-
         });
         
         return (
@@ -116,7 +108,7 @@ class Newsletter extends Component {
                         </div>
                         <div className="card-footer">
                             <div className="stats">
-                            <i className="material-icons text-danger">warning</i>Just Updated
+                            <i className="material-icons">local_offer</i> Tracked from Suggessions
                             </div>
                         </div>
                     </div>
@@ -132,7 +124,7 @@ class Newsletter extends Component {
                         </div>
                         <div className="card-footer">
                             <div className="stats">
-                                <i className="material-icons">local_offer</i> Tracked from Github
+                                <i className="material-icons">local_offer</i> Tracked from Suggessions
                         </div>
                         </div>
                     </div>

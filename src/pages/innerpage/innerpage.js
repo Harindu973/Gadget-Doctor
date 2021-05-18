@@ -77,7 +77,7 @@ class Inner extends Component {
           </div>
           <div className="col-lg-6 col-md-6 col-sm-6">
             <div className="card card-stats">
-              <div className="card-header card-header-info card-header-icon">
+              <div className="card-header card-header-primary card-header-icon">
                 <div className="card-icon">
                   <i className="material-icons">info_outline</i>
                 </div>

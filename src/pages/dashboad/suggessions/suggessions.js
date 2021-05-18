@@ -44,16 +44,13 @@ function Suggessions(props) {
         setTimeout(function () {  
         const fetchData = async () => {
 
-            
+            //getting recomendations
             Mileage = parseInt(document.getElementById("cmileage").value);
             var Mileage2 = Mileage + 5000;
             console.log("Milage is from element 1 :",Mileage);
             console.log("Milage is from element 2 :  ",Mileage2);
             const data = await db.collection("history").doc(props.model.id).collection(props.model.vnumber).where('mileage', '>=', Mileage).where('mileage', '<=', Mileage2).get()
             setSpells(data.docs.map(doc => ({ ...doc.data(), id: doc.id })))
-
-
-
 
         }
 

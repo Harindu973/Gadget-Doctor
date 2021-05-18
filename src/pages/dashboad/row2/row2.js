@@ -48,7 +48,7 @@ class Raw2 extends Component {
                 </div>
                 <div className="col-md-4">
                     <div className="card card-chart">
-                        <div className="card-header card-header-danger">
+                        <div className="card-header card-header-warning">
                             <div className="ct-chart" id="completedTasksChart" />
                         </div>
                         <div className="card-body">

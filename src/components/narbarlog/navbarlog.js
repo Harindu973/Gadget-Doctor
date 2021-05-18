@@ -88,14 +88,18 @@ class Navbar extends Component {
                                     <a className="dropdown-item" href="#">Log out</a>
                                 </div>
                             </li>
+                            <Link to="/">
                             <li>
-                            {
-                                user
-                                    ? <button onClick={signOut}>Sign out</button>
-                                    : <button onClick={signInWithGoogle}>Login</button>
+                                <a className="nav-link">
+                                    {
+                                        user
+                                        ? <button onClick={signOut}>Sign out</button>
+                                        : <button onClick={signInWithGoogle}>Login</button>
 
-                            }
+                                    }
+                                </a>
                             </li>
+                        </Link>
                         </ul>
                     </div>
                 </div>

@@ -10,14 +10,9 @@ import 'firebase/auth';
 import firebase from 'firebase/app';
 import firebaseApp from '../../../firebaseauth';
 import SpellInput from './spellinput.js';
-
-
 import 'firebase/firestore';
-
 import "../../auth/login";
 import "./spell.css";
-
-
 const firebaseAppAuth = firebaseApp.auth(); const providers = {
     googleProvider: new firebase.auth.GoogleAuthProvider(),
 };
@@ -28,14 +23,7 @@ var Mileage;
 
 function Suggessions(props) {
 
-
- 
-
-
-
-
-
-    const [spells, setSpells] = React.useState([])
+   const [spells, setSpells] = React.useState([])
 
     React.useEffect(() => {
         setTimeout(function () {  
@@ -53,11 +41,6 @@ function Suggessions(props) {
            // var data = data.docs.map(doc => ({ ...doc.data(), id: doc.id }));
 
            document.getElementById("warningsid").innerHTML = data2.docs.map(doc => ({ ...doc.data(), id: doc.id })).length;
-
-
-           
-
-
 
         }
 

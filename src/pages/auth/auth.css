@@ -14,7 +14,7 @@ html {
 
   .login-box {
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 50%;
     width: 40%;
     padding: 40px;
@@ -202,5 +202,17 @@ html {
 
 #text{
   color: #fff;
+}
+
+#btnLwg {
+  background: url("../../assets/img/login.png");
+  width: 245px;
+  height: 48px;
+}
+
+#logoIcon {
+  background: url("../../assets/img/logo506x250.png");
+  width: 300px;
+  height: 250px;
 }
 

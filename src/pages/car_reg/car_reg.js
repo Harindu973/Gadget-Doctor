@@ -3,6 +3,7 @@ import Navlog from "../../components/narbarlog/navbarlog";
 import GetDate from "../../components/external/calanderscript";
 import Regbutton from "./regfunction";
 import "../../pages/auth/auth";
+import './car_reg.css';
 
 import {
     Link
@@ -94,7 +95,7 @@ class Car_reg extends Component {
                             </div>
                         </div>
                         <div class="form-row">
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-4">
                                
 
                                 <div class="form-row">
@@ -126,6 +127,7 @@ class Car_reg extends Component {
                                     </div>
                                 </div>
                             </div>
+                            <div class="form-group col-md-2"></div>
                             <div class="form-group col-md-6">
                                 <label for="validationCustom04">Date of Last Service</label>
                                 <GetDate />
@@ -134,7 +136,7 @@ class Car_reg extends Component {
                         <img src="" className="App-logo" alt="logo" />
                         {
                             user
-                                ? <p id="text">Hello, {user.displayName}</p>
+                                ? <p id="text">Hello, {user.uid}</p>
                                 : <p id="text">Please sign in.</p>
                         }
 
@@ -143,7 +145,7 @@ class Car_reg extends Component {
                             <span />
                             <span />
                             <span />
-                            <Regbutton id={this.props.location.state.id} />
+                            <Link id="btnAdd" to='/'><Regbutton id={this.props.location.state.idlog} /></Link>
                         </a>
 
 

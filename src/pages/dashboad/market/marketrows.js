@@ -12,9 +12,6 @@ class Market extends Component {
     async componentDidMount() {
 
 
-
-
-
         const url = "https://market.gadgetdoc.tech/wp-json/wc/store/products";
         const response = await fetch(url);
         const data = await response.json();
@@ -29,25 +26,11 @@ class Market extends Component {
             document.getElementById("link_" + i).href = this.state.person.permalink;
             document.getElementById("content_" + i).innerHTML = this.state.person.prices.currency_code+": "+ (Math.round(this.state.person.prices.price) /100).toFixed(2) +" /=";
            // console.log({ person: data[i], loading: false });
-        }
-
-
-
-
-     
-
-
-        
+        }     
         //console.log(this.state);
 
     }
-
-
-
     render() {
-
-
-
         return (
             <>
 

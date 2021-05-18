@@ -1,8 +1,4 @@
 import React from 'react';
-
-//import "./carMenu.css";
-
-
 import withFirebaseAuth from 'react-with-firebase-auth';
 import 'firebase/auth';
 import firebase from 'firebase/app';
@@ -18,18 +14,11 @@ import "../../auth/login";
 const firebaseAppAuth = firebaseApp.auth(); const providers = {
     googleProvider: new firebase.auth.GoogleAuthProvider(),
 };
-
 const db = firebase.firestore(firebaseApp);
 var Mileage;
 
 
 function Suggessions(props) {
-
-
- 
-
-
-
 
 
     const [spells, setSpells] = React.useState([])

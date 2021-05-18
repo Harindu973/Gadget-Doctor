@@ -11,14 +11,10 @@ class Expert extends Component {
 
     async componentDidMount() {
 
-
-
-
-
         const url = "https://expert.gadgetdoc.tech/ghost/api/v3/content/posts/?key=393518c903a40dad5503c49e49&include=authors,tags";
         const response = await fetch(url);
         const data = await response.json();
-        console.log(data[0]);
+        console.log("hjvadyuewy     " + data);
 
 
         var c;
@@ -27,7 +23,7 @@ class Expert extends Component {
             console.log({ post: data, loading: false });
             document.getElementById("e-slug_" + c).innerHTML = this.state.post.posts[c].primary_author.name;
             document.getElementById("e-link_" + c).href = this.state.post.posts[c].url;
-            document.getElementById("e-content_" + c).innerHTML = this.state.post.posts[c].custom_excerpt;
+            document.getElementById("e-content_" + c).innerHTML = this.state.post.posts[c].title;
             console.log("ID Is = " + this.state.post.posts[0].title);
 
         }

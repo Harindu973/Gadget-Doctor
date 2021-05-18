@@ -84,19 +84,14 @@ async flogin(){
             <div>
                 <Navlog />
                 <div className="login-box">
-                    <h2>Login</h2>
+                   <center><h4><font color="#eee">Use your Google account to</font></h4></center>
+                   <h2>Login and SignUp</h2>
                     <form method="GET">
-                        <div className="user-box">
-                            <input type="text" id="useremail" required onChange={this.setEmail} />
-                            <label>Username</label>
-                        </div>
-                        <div className="user-box">
-                            <input type="password" id="userpw" required onChange={this.setPw} />
-                            <label>Password</label>
-                        </div>
-                        
-                        <img src="" className="App-logo" alt="logo" />
-                        {
+
+                        <center>
+                            <div id="logoIcon"  ></div>
+                            <br />
+                            {
                             user
                                 ? <p id="text">Hello,<Redirect to={{
                                     pathname: '/carmenu',
@@ -108,26 +103,15 @@ async flogin(){
                             </p>
                                 : <p id="text">Please sign in.</p>
                         }
-                        
 
-                        <a>
-                            <span />
-                            <span />
-                            <span />
-                            <span />
-                            <button onClick={this.flogin}>Login</button>
-                            {/* <Onclickcomp /> */}
-                    </a>
-                    
-                        <input type="submit" /> 
                         {
                                 user
                                     ? <button onClick={signOut}>Sign out</button>
-                                    : <button onClick={signInWithGoogle}>or Login With Google</button>
+                                    : <div id="btnLwg" onClick={signInWithGoogle}></div>
 
                             }
                             
-                            
+                            </center>  
                             
                     </form>
                 </div>
