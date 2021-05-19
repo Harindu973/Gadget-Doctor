@@ -19,20 +19,24 @@ class Expert extends Component {
         const response = await fetch(url);
         const data = await response.json();
        
-
+        var i = 0;
         var c;
         var d;
         for (c = 0; c < data.posts.length; c++) {
             for (d = 0; d < data.posts[c].tags.length; d++) {
 
-        if(data.posts[c].tags[d].name == Cookies.get('cTitle') || data.posts[c].tags[d].name == Cookies.get('cBrand')){
+        if(data.posts[c].tags[d].name == Cookies.get('cTitle')){
 
                 this.setState({ post: data, loading: false });
                 //console.log(this.state.post.posts[0].tags[1].name);
                // console.log({ post: data, loading: false });
-                document.getElementById("e-slug_" + c).innerHTML = this.state.post.posts[c].primary_author.name;
-                document.getElementById("e-link_" + c).href = this.state.post.posts[c].url;
-                document.getElementById("e-content_" + c).innerHTML = this.state.post.posts[c].title;
+                if( i < 3){
+                    document.getElementById("e-slug_" + i).innerHTML = this.state.post.posts[c].primary_author.name;
+                    document.getElementById("e-link_" + i).href = this.state.post.posts[c].url;
+                    document.getElementById("e-content_" + i).innerHTML = this.state.post.posts[c].title;
+                }
+
+                i = i +1;
 
         }
        console.log(data.posts[0].tags.length);

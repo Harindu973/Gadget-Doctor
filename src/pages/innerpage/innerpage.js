@@ -15,7 +15,7 @@ import withFirebaseAuth from 'react-with-firebase-auth'
 import firebase from 'firebase/app'
 import 'firebase/auth';
 
-import Market from '../dashboad/market/market';
+import Market from '../../components/market/market';
 import Expert from '../../components/expert/expert';
 
 
