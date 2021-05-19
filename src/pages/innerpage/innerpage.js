@@ -42,6 +42,7 @@ class Inner extends Component {
     if(this.props.location.desc != undefined){
       Cookies.set('cTitle', this.props.location.title, { path: '/details' });
       Cookies.set('cDesc', this.props.location.desc, { path: '/details' });
+      Cookies.set('cBrand', this.props.location.brand, { path: '/details' });
     }
 
     // setTimeout(function () {Cookies.set('mypet', this.props.location.desc, { path: '/details' }); }, 0);

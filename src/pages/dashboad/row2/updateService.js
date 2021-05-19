@@ -31,14 +31,14 @@ class Foo extends Component {
     var UID = document.getElementById("UIDService").value;
     var date = new Date();
     date.setMonth(date.getMonth() + 6);
-    console.log(date);
-   
+    var ts = date.toISOString().slice(0, 10);
+    console.log(ts);
    
     if (window.confirm("Do you want to update your Serive Status as " + Cmileage+"km ?")) {
 
       db.collection("users").doc(UID).collection("Vehicles").doc(this.props.id).update({
         LastServiceMileage: Cmileage,
-        LastServiceDate: date.toDateString()
+        LastServiceDate: ts
       })
         .then(function () {
           console.log("Document successfully written!");
